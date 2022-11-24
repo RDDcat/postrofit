@@ -18,14 +18,8 @@ public class DeliveryController {
     }
 
     // TODO 배달 2
-    // TODO income (출발역) (도착역) (택배사이즈)
-    // TODO return 택배 사이즈별 배달할 갯수
-    // TODO return 보관함 정보 출발역 보관함 번호별 보관함 상태
-    // TODO return 보관함 정보 도착역 보관함 번호별 보관함 상태
-    @GetMapping("/storage/{start}/{end}/{size}")
-    public String storage(@PathVariable String start, @PathVariable String end, @PathVariable String size){
-        return  start + " : " + end + " : " + size + " : storage 실행";
-    }
+    // TODO 배달 접수
+    
 
     // TODO 배달 3
     // TODO income (보관함 번호)
