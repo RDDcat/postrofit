@@ -8,21 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/delivery")
 public class DeliveryController {
-    @GetMapping("/")
-    public String welcome(){
-        return "index.html";
-    }
 
     // TODO 배달 1 
     // TODO income (출발역) (도착역)
-    // TODO return 예상수익
+    // TODO return 택배 사이즈 별 예상수익
     @GetMapping("/profit/{start}/{end}")
-    public String calcProfit(@PathVariable String start, @PathVariable String end){
+    public String deliveryCost(@PathVariable String start, @PathVariable String end){
         return start + " : " + end + " : calcProfit 실행";
     }
 
     // TODO 배달 2
     // TODO income (출발역) (도착역) (택배사이즈)
+    // TODO return 택배 사이즈별 배달할 갯수
     // TODO return 보관함 정보 출발역 보관함 번호별 보관함 상태
     // TODO return 보관함 정보 도착역 보관함 번호별 보관함 상태
     @GetMapping("/storage/{start}/{end}/{size}")
