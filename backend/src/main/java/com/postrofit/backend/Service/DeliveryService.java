@@ -3,5 +3,8 @@ package com.postrofit.backend.Service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SampleService {
+public class DeliveryService {
+    public void func1(){
+        
+    }
 }

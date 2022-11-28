@@ -1,5 +1,7 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/order")
 public class OrderController {
+    @Autowired
+    OrderService orderService;
+
 
     // TODO 주문 1
     // TODO income (출발역) (도착역)
