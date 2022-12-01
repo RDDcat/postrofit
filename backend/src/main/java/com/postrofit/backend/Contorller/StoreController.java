@@ -1,5 +1,7 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Service.StoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/store")
 public class StoreController {
+    @Autowired
+    StoreService storeService;
+
     // TODO 보관 1
     // TODO income (역이름)
     // TODO return 보관함 정보 > 보관함 번호 > 보관함 상태
