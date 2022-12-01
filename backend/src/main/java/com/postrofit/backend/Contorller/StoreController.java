@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.StationStorageStatDTO;
 import com.postrofit.backend.Service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,9 +21,7 @@ public class StoreController {
     // TODO return 보관함 정보 > 보관함 중형 가능 갯수
     // TODO return 보관함 정보 > 보관함 대형 가능 갯수
     @GetMapping("/storage/{start}")
-    public String storageState(@PathVariable String start){
-        return start + " : " + " : storageState 실행";
-    }
+    public StationStorageStatDTO storageState(@PathVariable String start){return storeService.store1(start);}
 
     // TODO 보관 2
     // TODO income (역이름) (사이즈)

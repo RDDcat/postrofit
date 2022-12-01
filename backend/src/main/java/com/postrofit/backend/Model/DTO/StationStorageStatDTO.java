@@ -10,4 +10,10 @@ public class StationStorageStatDTO {
     int storageSmall;
     int storageMid;
     int storageBig;
+
+    public StationStorageStatDTO() {
+        this.storageSmall = 0;
+        this.storageMid = 0;
+        this.storageBig = 0;
+    }
 }
