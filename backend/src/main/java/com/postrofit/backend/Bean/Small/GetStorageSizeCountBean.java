@@ -19,7 +19,9 @@ public class GetStorageSizeCountBean {
             case SMALL:
                 stationStorageStatDTO.setStorageSmall(stationStorageStatDTO.getStorageSmall()+1);
                 break;
-            default: break;
+            default:
+                System.out.println("storeDAO null 값 들어옴");
+                break;
         }
     }
 }
