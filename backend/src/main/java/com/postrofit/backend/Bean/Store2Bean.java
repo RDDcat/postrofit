@@ -13,10 +13,10 @@ public class Store2Bean {
     @Autowired
     GetStoreProfitBean getStoreProfitBean;
 
-    public List<StoreProfitDTO> exec(String start, String end, String size){
+    public List<StoreProfitDTO> exec(String start, String size){
 
-        // TODO 역과 역 거리, 사이즈에 따른 요금 측정
-        List<StoreProfitDTO> storeProfitDTOS = getStoreProfitBean.exec(start, end, size);
+        // TODO 역마다의 보관 요금
+        List<StoreProfitDTO> storeProfitDTOS = getStoreProfitBean.exec(start, size);
 
         return storeProfitDTOS;
     }

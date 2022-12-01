@@ -8,7 +8,7 @@ import java.util.List;
 @Component
 public class GetStoreProfitBean {
 
-    public List<StoreProfitDTO> exec(String start, String end, String size) {
+    public List<StoreProfitDTO> exec(String start, String size) {
 
 
 
