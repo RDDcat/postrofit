@@ -2,6 +2,7 @@ package com.postrofit.backend.Model.DAO;
 
 import com.postrofit.backend.Model.Enum.StorageSize;
 import com.postrofit.backend.Model.Enum.StorageStat;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name="tbl_storage")
+@Data
 public class storageDAO {
 
     @Id
