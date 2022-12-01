@@ -15,11 +15,11 @@ public class OrderController {
 
 
     // TODO 주문 1
-    // TODO income (출발역) (도착역)
-    // TODO return 예상수익
+    // TODO income (출발역)
+    // TODO return 보관함 번호별 보관함 상태리스트
     @GetMapping("/storage/{start}")
-    public String storageState(@PathVariable String start){
-        return start + " : " + " : storageState 실행";
+    public void storageState(@PathVariable String start){
+        orderService.order1(start);
     }
 
     // TODO 주문 2
@@ -27,6 +27,7 @@ public class OrderController {
     // TODO return 배달비용
     @GetMapping("/profit/{start}/{end}/{size}")
     public String orderCost(@PathVariable String start, @PathVariable String end,@PathVariable String size){
+        orderService.order2();
         return  start + " : " + end + " : " + size + " : orderPredict 실행";
     }
 
@@ -35,6 +36,7 @@ public class OrderController {
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     @GetMapping("/profit/{userId}")
     public String orderInfo(@PathVariable String userId){
+        orderService.order3();
         return userId + " : calcProfit 실행";
     }
 
