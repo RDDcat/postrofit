@@ -26,9 +26,8 @@ public class OrderController {
     // TODO income (출발역) (도착역) (사이즈)
     // TODO return 배달비용
     @GetMapping("/profit/{start}/{end}/{size}")
-    public String orderCost(@PathVariable String start, @PathVariable String end,@PathVariable String size){
-        orderService.order2();
-        return  start + " : " + end + " : " + size + " : orderPredict 실행";
+    public int orderCost(@PathVariable String start, @PathVariable String end,@PathVariable String size){
+        return orderService.order2(start, end, size);
     }
 
     // TODO 주문 3
@@ -36,7 +35,7 @@ public class OrderController {
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     @GetMapping("/profit/{userId}")
     public String orderInfo(@PathVariable String userId){
-        orderService.order3();
+        orderService.order3(userId);
         return userId + " : calcProfit 실행";
     }
 
