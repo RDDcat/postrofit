@@ -4,14 +4,8 @@ import com.postrofit.backend.Model.DAO.orderDAO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GetStationIdBean {
-    public String exec(String start){
-
-
+public class GetOrderDAOBean {
+    public orderDAO exec(String userId){
         return null;
-    }
-
-    public long exec(orderDAO order) {
-        return 0;
     }
 }

@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,9 +35,8 @@ public class OrderController {
     // TODO income (사용자 아이디)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     @GetMapping("/profit/{userId}")
-    public String orderInfo(@PathVariable String userId){
-        orderService.order3(userId);
-        return userId + " : calcProfit 실행";
+    public StoragePasswordDTO orderInfo(@PathVariable String userId){
+        return orderService.order3(userId);
     }
 
 
