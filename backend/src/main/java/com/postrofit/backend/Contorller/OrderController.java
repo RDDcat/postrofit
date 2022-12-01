@@ -26,7 +26,7 @@ public class OrderController {
     // TODO 주문 2
     // TODO income (출발역) (도착역) (사이즈)
     // TODO return 배달비용
-    @GetMapping("/profit/{start}/{end}/{size}")
+    @GetMapping("/cost/{start}/{end}/{size}")
     public int orderCost(@PathVariable String start, @PathVariable String end,@PathVariable String size){
         return orderService.order2(start, end, size);
     }
