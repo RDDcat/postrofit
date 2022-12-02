@@ -22,7 +22,7 @@ public class StoreService {
 
     public StorageStationStatDTO store1(String start){return store1Bean.exec(start);}
 
-    public List<StoreProfitDTO> store2(String start, String size){
+    public StoreProfitDTO store2(String start, String size){
         return store2Bean.exec(start, size);
     }
 

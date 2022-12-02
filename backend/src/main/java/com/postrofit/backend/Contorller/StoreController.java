@@ -1,6 +1,7 @@
 package com.postrofit.backend.Contorller;
 
 import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
+import com.postrofit.backend.Model.DTO.StoreProfitDTO;
 import com.postrofit.backend.Service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,10 +27,8 @@ public class StoreController {
     // TODO 보관 2
     // TODO income (역이름) (사이즈)
     // TODO return 보관함 정보 > 사이즈별 가격
-    @GetMapping("/profit/{start}/{end}/{size}")
-    public String orderCost(@PathVariable String start ,@PathVariable String size){
-        return  start + " : " + " : " + size + " : orderCost 실행";
-    }
+    @GetMapping("/profit/{start}/{size}")
+    public StoreProfitDTO orderCost(@PathVariable String start , @PathVariable String size){return storeService.store2(start, size);}
 
     // TODO 보관 3
     // TODO income (사용자 아이디) (보관함 번호)

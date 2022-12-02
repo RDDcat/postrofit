@@ -1,12 +1,12 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.storeDAO;
+import com.postrofit.backend.Model.DAO.storageDAO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GetStoreDAOBean {
+public class GetStorageDAOBean {
 
-    public storeDAO exec(String userId) {
+    public storageDAO exec(long storeId) {
 
 
         return null;
