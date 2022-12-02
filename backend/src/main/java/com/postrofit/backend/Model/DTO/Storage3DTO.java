@@ -7,5 +7,5 @@ public class Storage3DTO {
 
     int location;
 
-    String password;
+    long password;
 }
