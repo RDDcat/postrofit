@@ -1,23 +1,23 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.storageDAO;
-import com.postrofit.backend.Model.DTO.StationStorageStatDTO;
+import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
 import com.postrofit.backend.Model.Enum.StorageSize;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GetStorageSizeCountBean {
-    public void exec(storageDAO storageDAO, StationStorageStatDTO stationStorageStatDTO){
+    public void exec(storageDAO storageDAO, StorageStationStatDTO storageStationStatDTO){
         StorageSize size = storageDAO.getStorageSize();
         switch (size){
             case BIG:
-                stationStorageStatDTO.setStorageBig(stationStorageStatDTO.getStorageBig()+1);
+                storageStationStatDTO.setStorageBig(storageStationStatDTO.getStorageBig()+1);
                 break;
             case MID:
-                stationStorageStatDTO.setStorageMid(stationStorageStatDTO.getStorageMid()+1);
+                storageStationStatDTO.setStorageMid(storageStationStatDTO.getStorageMid()+1);
                 break;
             case SMALL:
-                stationStorageStatDTO.setStorageSmall(stationStorageStatDTO.getStorageSmall()+1);
+                storageStationStatDTO.setStorageSmall(storageStationStatDTO.getStorageSmall()+1);
                 break;
             default:
                 System.out.println("storeDAO null 값 들어옴");

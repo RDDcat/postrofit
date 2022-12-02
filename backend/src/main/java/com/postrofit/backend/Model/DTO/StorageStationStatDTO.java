@@ -4,14 +4,14 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class StationStorageStatDTO {
+public class StorageStationStatDTO {
 
     List<StorageStatDTO> storageStatDTOList;
     int storageSmall;
     int storageMid;
     int storageBig;
 
-    public StationStorageStatDTO() {
+    public StorageStationStatDTO() {
         this.storageSmall = 0;
         this.storageMid = 0;
         this.storageBig = 0;
