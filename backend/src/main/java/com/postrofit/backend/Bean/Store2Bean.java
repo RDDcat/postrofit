@@ -18,10 +18,10 @@ public class Store2Bean {
 
     public StoreProfitDTO exec(String start, String size){
 
-        // TODO 역 이름으로 역 ID 가져오기
+        // TODO 역 이름으로 역 DAO 가져오기
         StationDAO stationDAO = getStationDAOBean.exec(start);
 
-        // TODO 역 ID에서 브랜드 이름으로 브랜드 테이블 정보 가져오기
+        // TODO 역 DAO에서 브랜드 이름 가져오기
         StorageBrand brand = stationDAO.getStorageBrand();
 
         // TODO 기본 시간, 기본 가격 가져오기
