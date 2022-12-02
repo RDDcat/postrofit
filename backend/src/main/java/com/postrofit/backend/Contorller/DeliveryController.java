@@ -31,5 +31,12 @@ public class DeliveryController {
         return service.delivery2(start, end, userId);
     }
 
+    // TODO 배달 3
+    // TODO income (사용자 아이디)
+    // TODO return 도착역 보관함 비밀번호
+    @GetMapping("/take/{start}/{end}/{userId}")
+    public StoragePasswordDTO getEndPassword(@PathVariable String userId){
+        return service.delivery3(userId);
+    }
 
 }
