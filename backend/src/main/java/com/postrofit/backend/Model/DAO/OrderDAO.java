@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_order")
-public class orderDAO {
+public class OrderDAO {
 
     @Id @GeneratedValue
     private long orderId;

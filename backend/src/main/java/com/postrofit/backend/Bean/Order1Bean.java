@@ -3,7 +3,7 @@ package com.postrofit.backend.Bean;
 import com.postrofit.backend.Bean.Small.GetStationIdBean;
 import com.postrofit.backend.Bean.Small.GetStorageListBean;
 import com.postrofit.backend.Bean.Small.GetStorageStatDTOBean;
-import com.postrofit.backend.Model.DAO.storageDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,10 +26,10 @@ public class Order1Bean {
         String stationId = getStationIdBean.exec(start);
 
         // TODO 역 id로 보관함 전체가져오기
-        List<storageDAO> storageDAOS = getStorageListBean.exec(stationId);
+        List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationId);
 
         // TODO 보관함 전체를 상태값만 가진 DTO로 변경
-        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOBean.exec(storageDAOS);
+        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOBean.exec(StorageDAOS);
 
         // TODO 결과리턴
         return storageStatDTOS;

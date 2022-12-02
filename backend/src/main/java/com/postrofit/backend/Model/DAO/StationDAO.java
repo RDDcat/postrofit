@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tbl_station")
 @Data
-public class stationDAO {
+public class StationDAO {
 
     @Id
     private int stationId;

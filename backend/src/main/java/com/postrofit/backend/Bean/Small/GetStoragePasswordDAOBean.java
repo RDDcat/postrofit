@@ -1,12 +1,12 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.storagePasswordDAO;
+import com.postrofit.backend.Model.DAO.StoragePasswordDAO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GetStoragePasswordDAOBean {
 
-    public storagePasswordDAO exec(long storeId) {
+    public StoragePasswordDAO exec(long storeId) {
 
 
         return null;

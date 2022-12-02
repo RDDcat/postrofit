@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tbl_table")
 @Data
-public class storeDAO {
+public class StoreDAO {
 
     @Id
     private long storeId;

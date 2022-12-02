@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tbl_storage_password")
 @Data
-public class storagePasswordDAO {
+public class StoragePasswordDAO {
 
     @Id @GeneratedValue
     private long storagePasswordId;

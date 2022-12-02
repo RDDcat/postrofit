@@ -1,6 +1,6 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.orderDAO;
+import com.postrofit.backend.Model.DAO.OrderDAO;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +11,7 @@ public class GetStationIdBean {
         return null;
     }
 
-    public long exec(orderDAO order) {
+    public long exec(OrderDAO order) {
         return 0;
     }
 }

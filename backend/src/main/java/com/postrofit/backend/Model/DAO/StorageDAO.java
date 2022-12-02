@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="tbl_storage")
 @Data
-public class storageDAO {
+public class StorageDAO {
 
     @Id
     private long storageId;

@@ -1,12 +1,12 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.stationDAO;
+import com.postrofit.backend.Model.DAO.StationDAO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GetStationDAOBean {
 
-    public stationDAO exec(String start) {
+    public StationDAO exec(String start) {
 
         return null;
     }

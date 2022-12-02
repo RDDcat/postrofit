@@ -1,13 +1,13 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.storageDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
 import com.postrofit.backend.Model.Enum.StorageSize;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GetStorageSizeCountBean {
-    public void exec(storageDAO storageDAO, StorageStationStatDTO storageStationStatDTO){
+    public void exec(StorageDAO storageDAO, StorageStationStatDTO storageStationStatDTO){
         StorageSize size = storageDAO.getStorageSize();
         switch (size){
             case BIG:
