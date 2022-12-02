@@ -10,4 +10,9 @@ public class GetStationDAOBean {
 
         return null;
     }
+
+    public StationDAO exec(long storeId) {
+
+        return null;
+    }
 }

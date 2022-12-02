@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
 import com.postrofit.backend.Model.DTO.StoreProfitDTO;
 import com.postrofit.backend.Service.StoreService;
@@ -34,8 +35,7 @@ public class StoreController {
     // TODO income (사용자 아이디) (보관함 번호)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     @GetMapping("/profit/{userId}")
-    public String orderInfo(@PathVariable String userId){
-        return userId + " : orderInfo 실행";
+    public StoragePasswordDTO orderInfo(@PathVariable String userId){return storeService.store3(userId);
     }
 
 

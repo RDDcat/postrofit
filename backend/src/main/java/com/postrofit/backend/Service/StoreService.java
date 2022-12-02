@@ -3,7 +3,7 @@ package com.postrofit.backend.Service;
 import com.postrofit.backend.Bean.Store1Bean;
 import com.postrofit.backend.Bean.Store2Bean;
 import com.postrofit.backend.Bean.Store3Bean;
-import com.postrofit.backend.Model.DTO.Storage3DTO;
+import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
 import com.postrofit.backend.Model.DTO.StoreProfitDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class StoreService {
         return store2Bean.exec(start, size);
     }
 
-    public Storage3DTO store3(String userId) {
+    public StoragePasswordDTO store3(String userId) {
         return store3Bean.exec(userId);
     }
 }

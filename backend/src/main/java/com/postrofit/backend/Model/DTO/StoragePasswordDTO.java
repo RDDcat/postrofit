@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class StoragePasswordDTO {
     String stationName;
-    String storageNum;
+    int storageNum;
     String password;
 }
