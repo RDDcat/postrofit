@@ -12,8 +12,10 @@ import javax.persistence.Table;
 @Data
 public class StoragePasswordDAO {
 
-    @Id @GeneratedValue
+    @Id
     private long storagePasswordId;
+
+    private long storageId;
 
     // 보관함 비밀번호(String)
     private String storagePassword;

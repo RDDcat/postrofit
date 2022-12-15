@@ -19,7 +19,4 @@ public class GetStationIdBean {
         return stationId;
     }
 
-    public long exec(OrderDAO order) {
-        return 0;
-    }
 }

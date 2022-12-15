@@ -17,13 +17,13 @@ public class Order3Bean {
     @Autowired
     GetStoragePasswordBean getStoragePasswordBean;
 
-    public StoragePasswordDTO exec(String userId){
+    public StoragePasswordDTO exec(long userId){
         // 사용자 아이디 받아다가 주문 확인해서 보관함 비밀번호 가져오는거
         // TODO 주문확인
         OrderDAO order = getOrderDAOBean.exec(userId);
         
         // TODO orderDAO에서 출발 보관함 id 가져오기
-        long storageId = getStationIdBean.exec(order);
+        long storageId = order.getStartStorageId();
 
         // TODO 보관함 id로 보관함 비번 조회
         StoragePasswordDTO storagePassword = getStoragePasswordBean.exec(storageId);
