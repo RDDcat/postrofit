@@ -23,7 +23,7 @@ public class Order1Bean {
     public List<StorageStatDTO> exec(String start){
         // 시작역 이름과 도착역 이름 정보로 배달가격 산정
         // TODO 역 id 가져오기
-        String stationId = getStationIdBean.exec(start);
+        Long stationId = getStationIdBean.exec(start);
 
         // TODO 역 id로 보관함 전체가져오기
         List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationId);

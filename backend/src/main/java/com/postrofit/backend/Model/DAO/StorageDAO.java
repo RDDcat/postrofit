@@ -18,6 +18,7 @@ public class StorageDAO {
     private long storageId;
 
     // 역 아이디(FK)
+    long stationId;
 
     // 보관함 번호(int)
     int storageNumber;
