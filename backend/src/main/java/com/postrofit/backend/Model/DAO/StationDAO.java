@@ -1,12 +1,10 @@
 package com.postrofit.backend.Model.DAO;
 
 import com.postrofit.backend.Model.Enum.StorageBrand;
+import com.postrofit.backend.Model.Enum.StorageStat;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_station")
@@ -21,6 +19,6 @@ public class StationDAO {
     private String  stationName;
 
     // 역 보관함 브랜드
-    @Column
-    private StorageBrand storageBrand;
+    @Enumerated(EnumType.STRING)
+    StorageBrand storageBrand;
 }

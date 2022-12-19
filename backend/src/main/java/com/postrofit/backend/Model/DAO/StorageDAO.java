@@ -4,9 +4,7 @@ import com.postrofit.backend.Model.Enum.StorageSize;
 import com.postrofit.backend.Model.Enum.StorageStat;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
@@ -30,5 +28,6 @@ public class StorageDAO {
     Timestamp timestamp;
 
     // 보관함 사이즈(enum)
+    @Enumerated(EnumType.STRING)
     StorageSize storageSize;
 }

@@ -1,5 +1,6 @@
 package com.postrofit.backend.Model.DAO;
 
+import com.postrofit.backend.Model.Enum.StorageStat;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -29,4 +30,7 @@ public class OrderDAO {
     long endStorageId;
 
     // 주문 상태
+    @Enumerated(EnumType.STRING)
+    StorageStat storageStat;
+
 }
