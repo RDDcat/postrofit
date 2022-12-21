@@ -35,7 +35,7 @@ public class OrderController {
     // TODO income (사용자 아이디)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     @GetMapping("/profit/{userId}")
-    public StoragePasswordDTO orderInfo(@PathVariable String userId){
+    public StoragePasswordDTO orderInfo(@PathVariable long userId){
         return orderService.order3(userId);
     }
 

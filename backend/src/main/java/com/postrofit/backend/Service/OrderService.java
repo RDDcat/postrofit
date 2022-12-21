@@ -25,7 +25,7 @@ public class OrderService {
     public int order2(String start, String end, String size){
         return order2Bean.exec(start, end, size);
     }
-    public StoragePasswordDTO order3(String userId){
+    public StoragePasswordDTO order3(long userId){
         return order3Bean.exec(userId);
     }
 }

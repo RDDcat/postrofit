@@ -21,9 +21,8 @@ public class Store1Bean {
     GetStationStorageStatBean getStationStorageStatBean;
 
     public StorageStationStatDTO exec(String start){
-
         // TODO 역 Id 가져오기
-        String stationId = getStationIdBean.exec(start);
+        long stationId = getStationIdBean.exec(start);
 
         // TODO 역 id로 보관함 전체가져오기
         List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationId);

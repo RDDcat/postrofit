@@ -23,7 +23,7 @@ public class Order3Bean {
         OrderDAO order = getOrderDAOBean.exec(userId);
         
         // TODO orderDAO에서 출발 보관함 id 가져오기
-        long storageId = order.getStartStorageId();
+        long storageId = order.getStorageDAO().getStorageId();
 
         // TODO 보관함 id로 보관함 비번 조회
         StoragePasswordDTO storagePassword = getStoragePasswordBean.exec(storageId);
