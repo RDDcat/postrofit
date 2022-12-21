@@ -13,8 +13,8 @@ public class GetStorageListBean {
     StorageDAORepository storageDAORepository;
 
     public List<StorageDAO> exec(Long stationId){
-        List<StorageDAO> storageDAOList = storageDAORepository.findAllByStationId(stationId);
+        // List<StorageDAO> storageDAOList = storageDAORepository.findAllByStationId(stationId);
 
-        return storageDAOList;
+        return null;
     }
 }
