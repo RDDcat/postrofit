@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,7 +18,14 @@ public class OrderDAO {
     @Id @GeneratedValue
     private long orderId;
 
+    // 배달과의 연관관계 주인
+    @ManyToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    DeliveryDAO deliveryDAO ;
+
     // 맡긴 유저 아이디
+    @ManyToOne
+    UserDAO userDAO;
 
     // 출발역
     long startStationId;
@@ -28,10 +36,9 @@ public class OrderDAO {
     // 주문시간
 
     // 출발 보관함 아이디(FK)
-    long startStorageId;
-
-    // 도착 보관함 아이디(FK)
-    long endStorageId;
+    @OneToOne
+    @JoinColumn(name = "STORAGE_ID")
+    StorageDAO storageDAO;
 
     // 주문 상태
     @Enumerated(EnumType.STRING)

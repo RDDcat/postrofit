@@ -55,7 +55,8 @@ public class InitDB {
             userDAORepository.save(user2);
             userDAORepository.save(user3);
 
-            StorageDAO storage1 = new StorageDAO();
+            StorageDAO storage1 = new StorageDAO(0, 56890
+            -/);
 
             storageDAORepository.save(storage1);
 

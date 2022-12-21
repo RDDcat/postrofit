@@ -20,7 +20,13 @@ public class StorageDAO {
     private long storageId;
 
     // 역 아이디(FK)
-    long stationId;
+    @ManyToOne
+    @JoinColumn(name = "STATION_ID")
+    StationDAO stationDAO;
+
+    @OneToOne
+    @JoinColumn(name="STORAGE_PASSWORD_ID")
+    StoragePasswordDAO storagePasswordDAO;
 
     // 보관함 번호(int)
     int storageNumber;
