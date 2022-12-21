@@ -1,13 +1,17 @@
 package com.postrofit.backend.Model.DAO;
 
 import com.postrofit.backend.Model.Enum.StorageStat;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Table(name="tbl_order")
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderDAO {
 
     @Id @GeneratedValue

@@ -1,6 +1,7 @@
 package com.postrofit.backend;
 
 import com.postrofit.backend.Model.DAO.StationDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DAO.UserDAO;
 import com.postrofit.backend.Model.Enum.StorageBrand;
 import com.postrofit.backend.Repository.*;
@@ -53,6 +54,10 @@ public class InitDB {
             userDAORepository.save(user1);
             userDAORepository.save(user2);
             userDAORepository.save(user3);
+
+            StorageDAO storage1 = new StorageDAO();
+
+            storageDAORepository.save(storage1);
 
         }
     }
