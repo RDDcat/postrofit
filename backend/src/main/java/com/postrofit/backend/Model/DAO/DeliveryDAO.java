@@ -20,8 +20,8 @@ public class DeliveryDAO {
     UserDAO userDAO;
 
     // 주문 아이디(FK) 주인아님(Read Only)
-    @OneToMany
-    List<OrderDAO> orderDAO;
+    @OneToOne(mappedBy = "deliveryDAO", fetch = FetchType.LAZY)
+    OrderDAO orderDAO;
 
 
     // 시간

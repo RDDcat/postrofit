@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface StorageDAORepository extends JpaRepository<StorageDAO, Long> {
 
-    List<StorageDAO> findAllByStationId(Long stationId);
+    List<StorageDAO> findAllByStationDAO(Long stationId);
 }

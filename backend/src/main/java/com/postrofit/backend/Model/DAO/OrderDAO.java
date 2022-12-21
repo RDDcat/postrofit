@@ -1,5 +1,6 @@
 package com.postrofit.backend.Model.DAO;
 
+import com.postrofit.backend.Model.Enum.OrderStat;
 import com.postrofit.backend.Model.Enum.StorageStat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,19 +20,14 @@ public class OrderDAO {
     private long orderId;
 
     // 배달과의 연관관계 주인
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "DELIVERY_ID")
-    DeliveryDAO deliveryDAO ;
+    DeliveryDAO deliveryDAO;
 
     // 맡긴 유저 아이디
     @ManyToOne
+    @JoinColumn(name = "USER_ID")
     UserDAO userDAO;
-
-    // 출발역
-    long startStationId;
-
-    // 도착역
-    long endStationId;
 
     // 주문시간
 
@@ -42,6 +38,6 @@ public class OrderDAO {
 
     // 주문 상태
     @Enumerated(EnumType.STRING)
-    StorageStat storageStat;
+    OrderStat orderStat;
 
 }

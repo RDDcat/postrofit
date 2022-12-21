@@ -1,9 +1,7 @@
 package com.postrofit.backend;
 
-import com.postrofit.backend.Model.DAO.StationDAO;
-import com.postrofit.backend.Model.DAO.StorageDAO;
-import com.postrofit.backend.Model.DAO.StoragePasswordDAO;
-import com.postrofit.backend.Model.DAO.UserDAO;
+import com.postrofit.backend.Model.DAO.*;
+import com.postrofit.backend.Model.Enum.OrderStat;
 import com.postrofit.backend.Model.Enum.StorageBrand;
 import com.postrofit.backend.Model.Enum.StorageSize;
 import com.postrofit.backend.Model.Enum.StorageStat;
@@ -53,11 +51,13 @@ public class InitDB {
 
             UserDAO user1 = new UserDAO(0, "마로아님");
             UserDAO user2 = new UserDAO(1, "마로임");
-            UserDAO user3 = new UserDAO(2, "마로");
+            UserDAO user3 = new UserDAO(2, "배달부1");
+            UserDAO user4 = new UserDAO(3, "마로");
 
             userDAORepository.save(user1);
             userDAORepository.save(user2);
             userDAORepository.save(user3);
+            userDAORepository.save(user4);
 
             StoragePasswordDAO storagePassword1 = new StoragePasswordDAO(0, null, "1234");
             StoragePasswordDAO storagePassword2 = new StoragePasswordDAO(1, null, "5678");
@@ -89,9 +89,9 @@ public class InitDB {
             storagePasswordDAORepository.save(storagePassword13);
             storagePasswordDAORepository.save(storagePassword14);
 
-            StorageDAO storage1 = new StorageDAO(0, station1, storagePassword1, 1, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage2 = new StorageDAO(1, station1, storagePassword2, 2, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.BIG);
-            StorageDAO storage3 = new StorageDAO(2, station1, storagePassword3, 3, StorageStat.WAIT, new Timestamp(System.currentTimeMillis()), StorageSize.SMALL);
+            StorageDAO storage1 = new StorageDAO(0, station1, storagePassword1, 1, StorageStat.WAIT, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage2 = new StorageDAO(1, station1, storagePassword2, 2, StorageStat.WAIT, new Timestamp(System.currentTimeMillis()), StorageSize.BIG);
+            StorageDAO storage3 = new StorageDAO(2, station1, storagePassword3, 3, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.SMALL);
 
             StorageDAO storage4 = new StorageDAO(3, station2, storagePassword4, 1, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
             StorageDAO storage5 = new StorageDAO(4, station2, storagePassword5, 2, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
@@ -120,6 +120,18 @@ public class InitDB {
             storageDAORepository.save(storage12);
             storageDAORepository.save(storage13);
             storageDAORepository.save(storage14);
+
+            OrderDAO order1 = new OrderDAO(0, null, user1, storage1, OrderStat.WAIT);
+            OrderDAO order2 = new OrderDAO(0, null, user2, storage2, OrderStat.WAIT);
+            OrderDAO order3 = new OrderDAO(0, null, user2, storage4, OrderStat.WAIT); // 주문 - 배달 까지
+
+            orderDAORepository.save(order1);
+            orderDAORepository.save(order2);
+            orderDAORepository.save(order3);
+
+            DeliveryDAO delivery1 = new DeliveryDAO(0, user3, order3, storage5);
+
+            deliveryDAORepository.save(delivery1);
 
         }
     }
