@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_storage_password")
@@ -19,7 +16,8 @@ public class StoragePasswordDAO {
     @Id
     private long storagePasswordId;
 
-    private long storageId;
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "storagePasswordDAO")
+    StorageDAO storageDAO;
 
     // 보관함 비밀번호(String)
     private String storagePassword;
