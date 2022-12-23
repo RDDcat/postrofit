@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class UserDAO {
 
-    @Id @GeneratedValue
+    @Id
     private long userId;
     String userName;
 }

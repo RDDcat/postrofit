@@ -28,7 +28,6 @@ public class InitDB {
 
 
     @Component
-    @Transactional
     @RequiredArgsConstructor
     static class InitService {
         private final StationDAORepository stationDAORepository;
@@ -100,8 +99,8 @@ public class InitDB {
             StorageDAO storage8 = new StorageDAO(7, station2, storagePassword8, 5, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
 
             StorageDAO storage9 = new StorageDAO(8, station3, storagePassword9, 1, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage10 = new StorageDAO(9, station3, storagePassword10, 2, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage11 = new StorageDAO(10, station3, storagePassword11, 3, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage10 = new StorageDAO(9, station3, storagePassword10, 2, StorageStat.STORE, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage11 = new StorageDAO(10, station3, storagePassword11, 3, StorageStat.STORE, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
             StorageDAO storage12 = new StorageDAO(11, station3, storagePassword12, 4, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
             StorageDAO storage13 = new StorageDAO(12, station3, storagePassword13, 5, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
             StorageDAO storage14 = new StorageDAO(13, station3, storagePassword14, 6, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
@@ -132,6 +131,12 @@ public class InitDB {
             DeliveryDAO delivery1 = new DeliveryDAO(0, user3, order3, storage5);
 
             deliveryDAORepository.save(delivery1);
+
+            StoreDAO store1 = new StoreDAO(0, user1, storage10);
+            StoreDAO store2 = new StoreDAO(1, user4, storage11);
+
+            storeDAORepository.save(store1);
+            storeDAORepository.save(store2);
 
         }
     }
