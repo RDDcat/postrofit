@@ -40,4 +40,8 @@ public class OrderDAO {
     @Enumerated(EnumType.STRING)
     OrderStat orderStat;
 
+    public void addDelivery(DeliveryDAO delivery){
+        this.deliveryDAO =delivery;
+    }
+
 }

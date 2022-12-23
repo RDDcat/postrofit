@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name="tbl_delivery")
@@ -30,4 +29,9 @@ public class DeliveryDAO {
     @OneToOne
     @JoinColumn(name = "STORAGE_ID")
     StorageDAO storageDAO;
+
+    public void addOrder(OrderDAO order){
+        order.addDelivery(this);
+        this.orderDAO = order;
+    }
 }

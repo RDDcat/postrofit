@@ -8,7 +8,6 @@ import com.postrofit.backend.Model.Enum.StorageStat;
 import com.postrofit.backend.Repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import java.sql.Timestamp;
@@ -122,13 +121,14 @@ public class InitDB {
 
             OrderDAO order1 = new OrderDAO(0, null, user1, storage1, OrderStat.WAIT);
             OrderDAO order2 = new OrderDAO(0, null, user2, storage2, OrderStat.WAIT);
-            OrderDAO order3 = new OrderDAO(0, null, user2, storage4, OrderStat.WAIT); // 주문 - 배달 까지
+            OrderDAO order3 = new OrderDAO(0, null, user2, storage4, OrderStat.DELIVER); // 주문 - 배달 까지
 
             orderDAORepository.save(order1);
             orderDAORepository.save(order2);
             orderDAORepository.save(order3);
 
-            DeliveryDAO delivery1 = new DeliveryDAO(0, user3, order3, storage5);
+            DeliveryDAO delivery1 = new DeliveryDAO(0, user3, null, storage5);
+            delivery1.addOrder(order3);
 
             deliveryDAORepository.save(delivery1);
 
