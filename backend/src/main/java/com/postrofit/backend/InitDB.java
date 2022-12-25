@@ -128,9 +128,12 @@ public class InitDB {
             orderDAORepository.save(order3);
 
             DeliveryDAO delivery1 = new DeliveryDAO(0, user3, null, storage5);
-            delivery1.addOrder(order3);
+            order3.addDelivery(delivery1);
+            System.out.println("DELIVERYY = " + delivery1);
+            System.out.println("order3 = " + order3);
 
             deliveryDAORepository.save(delivery1);
+            orderDAORepository.save(order3);
 
             StoreDAO store1 = new StoreDAO(0, user1, storage10);
             StoreDAO store2 = new StoreDAO(1, user4, storage11);

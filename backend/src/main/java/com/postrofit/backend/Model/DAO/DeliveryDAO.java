@@ -1,7 +1,9 @@
 package com.postrofit.backend.Model.DAO;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -9,6 +11,7 @@ import javax.persistence.*;
 @Table(name="tbl_delivery")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class DeliveryDAO {
 
     @Id @GeneratedValue
@@ -30,8 +33,4 @@ public class DeliveryDAO {
     @JoinColumn(name = "STORAGE_ID")
     StorageDAO storageDAO;
 
-    public void addOrder(OrderDAO order){
-        order.addDelivery(this);
-        this.orderDAO = order;
-    }
 }
