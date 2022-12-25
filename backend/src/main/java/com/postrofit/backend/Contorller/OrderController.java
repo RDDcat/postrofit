@@ -1,14 +1,18 @@
 package com.postrofit.backend.Contorller;
 
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
+import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import com.postrofit.backend.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/order")
 public class OrderController {
     @Autowired
@@ -19,8 +23,8 @@ public class OrderController {
     // TODO income (출발역)
     // TODO return 보관함 번호별 보관함 상태리스트
     @GetMapping("/storage/{start}")
-    public void storageState(@PathVariable String start){
-        orderService.order1(start);
+    public List<StorageStatDTO> storageState(@PathVariable String start){
+        return orderService.order1(start);
     }
 
     // TODO 주문 2

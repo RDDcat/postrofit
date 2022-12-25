@@ -1,5 +1,6 @@
 package com.postrofit.backend.Bean.Small;
 
+import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Repository.StorageDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,9 @@ public class GetStorageListBean {
     @Autowired
     StorageDAORepository storageDAORepository;
 
-    public List<StorageDAO> exec(Long stationId){
-        // List<StorageDAO> storageDAOList = storageDAORepository.findAllByStationId(stationId);
+    public List<StorageDAO> exec(StationDAO stationDAO){
+        List<StorageDAO> storageDAOList = storageDAORepository.findStorageDAOByStationDAO(stationDAO);
 
-        return null;
+        return storageDAOList;
     }
 }

@@ -10,6 +10,9 @@ import java.util.List;
 @Component
 public class GetStorageStatDTOBean {
     public List<StorageStatDTO> exec(List<StorageDAO> start){
+        if(start==null){
+            return null;
+        }
         List<StorageStatDTO> storageStatDTOS = new ArrayList<>();
         StorageStatDTO storageStatDTO = new StorageStatDTO();
         for(StorageDAO storage : start){

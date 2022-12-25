@@ -1,8 +1,10 @@
 package com.postrofit.backend.Bean;
 
+import com.postrofit.backend.Bean.Small.GetStationDAOBean;
 import com.postrofit.backend.Bean.Small.GetStationIdBean;
 import com.postrofit.backend.Bean.Small.GetStationStorageStatBean;
 import com.postrofit.backend.Bean.Small.GetStorageListBean;
+import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.StorageStationStatDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,7 @@ import java.util.List;
 public class Store1Bean {
 
     @Autowired
-    GetStationIdBean getStationIdBean;
+    GetStationDAOBean getStationDAOBean;
     @Autowired
     GetStorageListBean getStorageListBean;
     @Autowired
@@ -22,10 +24,10 @@ public class Store1Bean {
 
     public StorageStationStatDTO exec(String start){
         // TODO 역 Id 가져오기
-        long stationId = getStationIdBean.exec(start);
+        StationDAO stationDAO = getStationDAOBean.exec(start);
 
         // TODO 역 id로 보관함 전체가져오기
-        List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationId);
+        List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationDAO);
 
         // TODO 보관함 가능한(소, 중, 대) 개수 세고 StorageStatDTO로 변환
         StorageStationStatDTO storageStationStatDTO = getStationStorageStatBean.exec(StorageDAOS);

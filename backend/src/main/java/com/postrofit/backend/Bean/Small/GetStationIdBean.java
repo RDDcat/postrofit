@@ -11,8 +11,8 @@ public class GetStationIdBean {
     @Autowired
     StationDAORepository stationDAORepository;
 
-    public Long exec(String start){
-        StationDAO stationDAO = stationDAORepository.findByStationName(start);
+    public Long exec(String stationName){
+        StationDAO stationDAO = stationDAORepository.findByStationName(stationName);
 
         long stationId = stationDAO.getStationId();
 
