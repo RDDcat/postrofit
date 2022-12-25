@@ -1,7 +1,6 @@
 package com.postrofit.backend.Bean;
 
 import com.postrofit.backend.Bean.Small.GetStationDAOBean;
-import com.postrofit.backend.Bean.Small.GetStationIdBean;
 import com.postrofit.backend.Bean.Small.GetStorageListBean;
 import com.postrofit.backend.Bean.Small.GetStorageStatDTOBean;
 import com.postrofit.backend.Model.DAO.StationDAO;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class StationStorageStatBean {
+public class StorageStatBean {
 
     @Autowired
     GetStationDAOBean getStationDAOBean;

@@ -1,6 +1,6 @@
 package com.postrofit.backend.Service;
 
-import com.postrofit.backend.Bean.StationStorageStatBean;
+import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Store2Bean;
 import com.postrofit.backend.Bean.Store3Bean;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
@@ -14,13 +14,13 @@ import java.util.List;
 @Service
 public class StoreService {
     @Autowired
-    StationStorageStatBean stationStorageStatBean;
+    StorageStatBean storageStatBean;
     @Autowired
     Store2Bean store2Bean;
     @Autowired
     Store3Bean store3Bean;
 
-    public List<StorageStatDTO> store1(String start){return stationStorageStatBean.exec(start);}
+    public List<StorageStatDTO> store1(String start){return storageStatBean.exec(start);}
 
     public StoreProfitDTO store2(String start, String size){
         return store2Bean.exec(start, size);
