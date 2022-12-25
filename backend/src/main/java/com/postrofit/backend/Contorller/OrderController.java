@@ -38,7 +38,8 @@ public class OrderController {
     // TODO 주문 3
     // TODO income (사용자 아이디)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
-    @GetMapping("/profit/{userId}")
+    // 사용자가 1개의 오더만 가질때 작동
+    @GetMapping("/storage/info/{userId}")
     public StoragePasswordDTO orderInfo(@PathVariable long userId){
         return orderService.order3(userId);
     }

@@ -30,7 +30,6 @@ public class Order3Bean {
 
         // TODO 주문확인
         OrderDAO order = getOrderDAOBean.exec(userDAO);
-        System.out.println("order오더 : " );
         
         // TODO orderDAO에서 출발 보관함 id 가져오기
         StorageDAO storageDAO = order.getStorageDAO();
