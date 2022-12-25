@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.OrderDAO;
+import com.postrofit.backend.Model.DAO.UserDAO;
 import com.postrofit.backend.Repository.OrderDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,8 +17,8 @@ public class GetOrderDAOBean {
         return null;
     }
 
-    public OrderDAO exec(long userId){
-        Optional<OrderDAO> orderDAO = orderDAORepository.findById(userId);
+    public OrderDAO exec(UserDAO userDAO){
+        Optional<OrderDAO> orderDAO = orderDAORepository.findOrderDAOByUserDAO(userDAO);
 
         return orderDAO.orElse(null);
 

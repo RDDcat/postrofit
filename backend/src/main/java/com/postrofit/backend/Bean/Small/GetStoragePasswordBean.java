@@ -1,15 +1,20 @@
 package com.postrofit.backend.Bean.Small;
 
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
-import com.postrofit.backend.Repository.StorageDAORepository;
-import com.postrofit.backend.Repository.StoragePasswordDAORepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class GetStoragePasswordBean {
-    public StoragePasswordDTO exec(long storageId){
+    public StoragePasswordDTO exec(StorageDAO storageDAO){
+        if(storageDAO ==null){
+            return null;
+        }
+        StoragePasswordDTO storagePasswordDTO = new StoragePasswordDTO();
+        storagePasswordDTO.setStationName(storageDAO.getStationDAO().getStationName());
+        storagePasswordDTO.setPassword(storageDAO.getStoragePasswordDAO().getStoragePassword());
+        storagePasswordDTO.setStorageNum(storageDAO.getStorageNumber());
 
-        return null;
+        return storagePasswordDTO;
     }
 }

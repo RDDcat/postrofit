@@ -3,13 +3,19 @@ package com.postrofit.backend.Bean;
 import com.postrofit.backend.Bean.Small.GetOrderDAOBean;
 import com.postrofit.backend.Bean.Small.GetStationIdBean;
 import com.postrofit.backend.Bean.Small.GetStoragePasswordBean;
+import com.postrofit.backend.Bean.Small.GetUserDAOBean;
 import com.postrofit.backend.Model.DAO.OrderDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
+import com.postrofit.backend.Model.DAO.StoragePasswordDAO;
+import com.postrofit.backend.Model.DAO.UserDAO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Order3Bean {
+    @Autowired
+    GetUserDAOBean getUserDAOBean;
     @Autowired
     GetOrderDAOBean getOrderDAOBean;
     @Autowired
@@ -19,14 +25,18 @@ public class Order3Bean {
 
     public StoragePasswordDTO exec(long userId){
         // 사용자 아이디 받아다가 주문 확인해서 보관함 비밀번호 가져오는거
+        // TODO userId로 UserDAO가져오기
+        UserDAO userDAO = getUserDAOBean.exec(userId);
+
         // TODO 주문확인
-        OrderDAO order = getOrderDAOBean.exec(userId);
+        OrderDAO order = getOrderDAOBean.exec(userDAO);
+        System.out.println("order오더 : " );
         
         // TODO orderDAO에서 출발 보관함 id 가져오기
-        long storageId = order.getStorageDAO().getStorageId();
+        StorageDAO storageDAO = order.getStorageDAO();
 
         // TODO 보관함 id로 보관함 비번 조회
-        StoragePasswordDTO storagePassword = getStoragePasswordBean.exec(storageId);
+        StoragePasswordDTO storagePassword = getStoragePasswordBean.exec(storageDAO);
 
         // TODO 결과리턴
         return storagePassword;
