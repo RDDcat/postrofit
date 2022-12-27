@@ -28,4 +28,11 @@ public class OrderService {
     public StoragePasswordDTO order3(long userId){
         return order3Bean.exec(userId);
     }
+
+
+    public void makeOrderGET(long userId, String stationName, int storageNum) {
+    }
+
+    public void makeOrderPOST(String body) {
+    }
 }

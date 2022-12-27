@@ -5,10 +5,7 @@ import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import com.postrofit.backend.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,6 +39,17 @@ public class OrderController {
     @GetMapping("/storage/info/{userId}")
     public StoragePasswordDTO orderInfo(@PathVariable long userId){
         return orderService.order3(userId);
+    }
+
+    // TODO 주문 4
+    @GetMapping("/make/{userId}/{stationName}/{storageNum}")
+    public void makeOrderGET(@PathVariable long userId, @PathVariable String stationName, @PathVariable int storageNum){
+        orderService.makeOrderGET(userId, stationName, storageNum);
+    }
+    // TODO 주문 4
+    @PostMapping("/make")
+    public void makeOrderPOST(@RequestBody String body){
+        orderService.makeOrderPOST(body);
     }
 
 
