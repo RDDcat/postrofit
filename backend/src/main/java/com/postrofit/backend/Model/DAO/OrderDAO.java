@@ -1,14 +1,12 @@
 package com.postrofit.backend.Model.DAO;
 
 import com.postrofit.backend.Model.Enum.OrderStat;
-import com.postrofit.backend.Model.Enum.StorageStat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Getter
@@ -43,6 +41,14 @@ public class OrderDAO {
 
     public void addDelivery(DeliveryDAO delivery){
         this.deliveryDAO =delivery;
+    }
+
+    @Transactional
+    public void makeOrder(StorageDAO storageDAO, UserDAO userDAO){
+        this.orderStat = OrderStat.WAIT;
+        this.storageDAO =storageDAO;
+        this.userDAO = userDAO;
+
     }
 
 }

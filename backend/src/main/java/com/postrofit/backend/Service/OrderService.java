@@ -1,5 +1,6 @@
 package com.postrofit.backend.Service;
 
+import com.postrofit.backend.Bean.MakeOrderGETBean;
 import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Order2Bean;
 import com.postrofit.backend.Bean.Order3Bean;
@@ -18,6 +19,8 @@ public class OrderService {
     Order2Bean order2Bean;
     @Autowired
     Order3Bean order3Bean;
+    @Autowired
+    MakeOrderGETBean makeOrderGETBean;
 
     public List<StorageStatDTO> order1(String start){
         return storageStatBean.exec(start);
@@ -31,8 +34,10 @@ public class OrderService {
 
 
     public void makeOrderGET(long userId, String stationName, int storageNum) {
+        makeOrderGETBean.exec(userId, stationName, storageNum);
     }
 
     public void makeOrderPOST(String body) {
+        System.out.println("제작 예정 아직 안함");
     }
 }

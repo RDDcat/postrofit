@@ -9,4 +9,6 @@ import java.util.List;
 public interface StorageDAORepository extends JpaRepository<StorageDAO, Long> {
 
     List<StorageDAO> findStorageDAOByStationDAO(StationDAO stationDAO);
+
+    StorageDAO findStorageDAOByStationDAOAndStorageNumber(StationDAO stationDAO, int storageNumber);
 }
