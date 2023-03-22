@@ -16,6 +16,7 @@ public class OrderController {
     OrderService orderService;
 
 
+    // TODO Get방식
     // TODO 주문 1
     // TODO income (출발역)
     // TODO return 보관함 번호별 보관함 상태리스트
@@ -24,6 +25,7 @@ public class OrderController {
         return orderService.order1(start);
     }
 
+    // TODO Get방식
     // TODO 주문 2
     // TODO income (출발역) (도착역) (사이즈)
     // TODO return 배달비용
@@ -32,6 +34,7 @@ public class OrderController {
         return orderService.order2(start, end, size);
     }
 
+    // TODO Post방식
     // TODO 주문 3
     // TODO income (사용자 아이디)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호

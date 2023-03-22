@@ -19,6 +19,7 @@ public class StoreController {
     @Autowired
     StoreService storeService;
 
+    // TODO Get방식
     // TODO 보관 1
     // TODO income (역이름)
     // TODO return 보관함 정보 > 보관함 번호 > 보관함 상태
@@ -28,12 +29,14 @@ public class StoreController {
     @GetMapping("/storage/{start}")
     public List<StorageStatDTO> storageState(@PathVariable String start){return storeService.store1(start);}
 
+    // TODO Get방식
     // TODO 보관 2
     // TODO income (역이름) (사이즈)
     // TODO return 보관함 정보 > 사이즈별 가격
     @GetMapping("/profit/{start}/{size}")
     public StoreProfitDTO orderCost(@PathVariable String start , @PathVariable String size){return storeService.store2(start, size);}
 
+    // TODO Post방식
     // TODO 보관 3
     // TODO income (사용자 아이디) (보관함 번호)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
