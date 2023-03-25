@@ -25,7 +25,7 @@ public class DeliveryController {
         return service.delivery1(start, end);
     }
 
-    // TODO Post방식
+    // TODO Get방식
     // TODO 배달 2
     // TODO income (출발역) (도착역) (사용자 아이디)
     // TODO return 보관함 비밀번호
@@ -33,7 +33,7 @@ public class DeliveryController {
     public StoragePasswordDTO takeOrder(@PathVariable String start, @PathVariable String end, @PathVariable String userId){
         return service.delivery2(start, end, userId);
     }
-    // TODO Post방식
+    // TODO Get방식
     // TODO 배달 3
     // TODO income (출발역) (도착역) (사용자 아이디)
     // TODO return 보관함 비밀번호
