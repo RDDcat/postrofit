@@ -14,8 +14,8 @@ spring:
     show-sql: 'true'
     hibernate:
       ddl-auto: create
-  profiles:
-    include: HIDDEN
+#  profiles:
+#    include: HIDDEN
   h2:
     console:
       enabled: true
