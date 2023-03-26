@@ -13,13 +13,13 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-service
-          uri: lb://USER-SERVICE
+        - id: backend-service
+          uri: lb://BACKEND-SERVICE
           predicates:
-            - Path=/user-service/**
+            - Path=/backend-service/**
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/backend-service/(?<segment>.*), /$\{segment}
 
 
 token:
