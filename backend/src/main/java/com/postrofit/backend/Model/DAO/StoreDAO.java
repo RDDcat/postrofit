@@ -17,11 +17,11 @@ public class StoreDAO {
     private long storeId;
 
     // 보관함 회원 아이디(FK)
-    @ManyToOne
-    UserDAO userDAO;
-
-    // 보관함 아이디(FK)
-    @OneToOne
-    @JoinColumn(name = "STORAGE_ID")
-    StorageDAO storageDAO;
+//    @ManyToOne
+//    UserDAO userDAO;
+//
+//    // 보관함 아이디(FK)
+//    @OneToOne
+//    @JoinColumn(name = "STORAGE_ID")
+//    StorageDAO storageDAO;
 }
