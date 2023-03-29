@@ -2,16 +2,13 @@ package com.postrofit.backend.Model.DAO;
 
 import com.postrofit.backend.Model.Enum.StorageBrand;
 import com.postrofit.backend.Model.Enum.StorageStat;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="tbl_station")
-@Data
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 public class StationDAO {
