@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.StationDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Repository.StationDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -8,14 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class GetStationDAOBean {
     @Autowired
-    StationDAORepository stationDAORepository;
+    StationDAORepository stationRepository;
 
     public StationDAO exec(String name) {
-        return stationDAORepository.findByStationName(name);
+        return stationRepository.findByStationName(name);
     }
 
-    public StationDAO exec(long storeId) {
+    public StationDAO exec(long stationId) {
+        return stationRepository.findById(stationId).get();
+    }
 
-        return null;
+    public StationDAO exec(StorageDAO storageDAO) {
+        return stationRepository.findById(storageDAO.getStationId()).get();
     }
 }

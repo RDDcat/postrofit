@@ -19,8 +19,6 @@ public class OrderDAO {
     @Id @GeneratedValue
     private long orderId;
 
-
-
     // 주문시간
     Date createAt;
 
