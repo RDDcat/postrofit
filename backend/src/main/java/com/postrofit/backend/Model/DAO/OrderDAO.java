@@ -19,16 +19,19 @@ public class OrderDAO {
     @Id @GeneratedValue
     private long orderId;
 
+
+
+    // 주문시간
+    Date createAt;
+
     long deliveryId;
 
     // 맡긴 유저 아이디
     long userId;
 
-    // 주문시간
-    Date createAt;
-
     // 출발 보관함 아이디
     long storageId;
+
 
     // 주문 상태
     @Enumerated(EnumType.STRING)
@@ -36,13 +39,14 @@ public class OrderDAO {
 
     public void addDelivery(DeliveryDAO delivery){
         this.deliveryId =delivery.getDeliveryId();
+        this.orderStat = OrderStat.DELIVER;
     }
 
     @Transactional
-    public void makeOrder(StorageDAO storageDAO, UserDAO userDAO){
+    public void makeOrder(UserDAO userDAO, StorageDAO storageDAO){
         this.orderStat = OrderStat.WAIT;
-        this.storageId =storageDAO.getStorageId();
         this.userId = userDAO.getUserId();
+        this.storageId =storageDAO.getStorageId();
 
     }
 

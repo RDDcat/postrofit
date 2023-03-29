@@ -20,20 +20,21 @@ public class StorageDAO {
 
     // 역 아이디
     long stationId;
-
     long storagePasswordId;
-
     // 보관함 번호(int)
     int storageNumber;
-
     // 보관함 상태(enum)
     @Enumerated(EnumType.STRING)
     StorageStat storageStat;
-
     // 보관함 상태 업데이트(timestamp)
-    Date createAt;
+    Date updateAt;
 
     // 보관함 사이즈(enum)
     @Enumerated(EnumType.STRING)
     StorageSize storageSize;
+
+    public void updateStat(StorageStat storageStat){
+        this.storageStat = storageStat;
+    }
+
 }

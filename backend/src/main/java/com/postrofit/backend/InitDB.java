@@ -10,7 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Component
 @RequiredArgsConstructor
@@ -57,20 +59,20 @@ public class InitDB {
             userDAORepository.save(user3);
             userDAORepository.save(user4);
 
-            StoragePasswordDAO storagePassword1 = new StoragePasswordDAO(0, null, "1234");
-            StoragePasswordDAO storagePassword2 = new StoragePasswordDAO(1, null, "5678");
-            StoragePasswordDAO storagePassword3 = new StoragePasswordDAO(2, null, "4945");
-            StoragePasswordDAO storagePassword4 = new StoragePasswordDAO(3, null, "1129");
-            StoragePasswordDAO storagePassword5 = new StoragePasswordDAO(4, null, "1212");
-            StoragePasswordDAO storagePassword6 = new StoragePasswordDAO(5, null, "1313");
-            StoragePasswordDAO storagePassword7 = new StoragePasswordDAO(6, null, "1414");
-            StoragePasswordDAO storagePassword8 = new StoragePasswordDAO(7, null, "1515");
-            StoragePasswordDAO storagePassword9 = new StoragePasswordDAO(8, null, "1616");
-            StoragePasswordDAO storagePassword10 = new StoragePasswordDAO(9, null, "1717");
-            StoragePasswordDAO storagePassword11 = new StoragePasswordDAO(10, null, "1188");
-            StoragePasswordDAO storagePassword12 = new StoragePasswordDAO(11, null, "1122");
-            StoragePasswordDAO storagePassword13 = new StoragePasswordDAO(12, null, "1111");
-            StoragePasswordDAO storagePassword14 = new StoragePasswordDAO(13, null, "2222");
+            StoragePasswordDAO storagePassword1 = new StoragePasswordDAO(0, "1234");
+            StoragePasswordDAO storagePassword2 = new StoragePasswordDAO(1, "5678");
+            StoragePasswordDAO storagePassword3 = new StoragePasswordDAO(2, "4945");
+            StoragePasswordDAO storagePassword4 = new StoragePasswordDAO(3, "1129");
+            StoragePasswordDAO storagePassword5 = new StoragePasswordDAO(4, "1212");
+            StoragePasswordDAO storagePassword6 = new StoragePasswordDAO(5, "1313");
+            StoragePasswordDAO storagePassword7 = new StoragePasswordDAO(6, "1414");
+            StoragePasswordDAO storagePassword8 = new StoragePasswordDAO(7, "1515");
+            StoragePasswordDAO storagePassword9 = new StoragePasswordDAO(8, "1616");
+            StoragePasswordDAO storagePassword10 = new StoragePasswordDAO(9, "1717");
+            StoragePasswordDAO storagePassword11 = new StoragePasswordDAO(10, "1188");
+            StoragePasswordDAO storagePassword12 = new StoragePasswordDAO(11, "1122");
+            StoragePasswordDAO storagePassword13 = new StoragePasswordDAO(12, "1111");
+            StoragePasswordDAO storagePassword14 = new StoragePasswordDAO(13, "2222");
 
             storagePasswordDAORepository.save(storagePassword1);
             storagePasswordDAORepository.save(storagePassword2);
@@ -87,22 +89,22 @@ public class InitDB {
             storagePasswordDAORepository.save(storagePassword13);
             storagePasswordDAORepository.save(storagePassword14);
 
-            StorageDAO storage1 = new StorageDAO(0, station1, storagePassword1, 1, StorageStat.WAIT, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage2 = new StorageDAO(1, station1, storagePassword2, 2, StorageStat.WAIT, new Timestamp(System.currentTimeMillis()), StorageSize.BIG);
-            StorageDAO storage3 = new StorageDAO(2, station1, storagePassword3, 3, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.SMALL);
+            StorageDAO storage1 = new StorageDAO(0, station1.getStationId(), storagePassword1.getStoragePasswordId(), 1, StorageStat.WAIT,  new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage2 = new StorageDAO(1, station1.getStationId(), storagePassword2.getStoragePasswordId(), 2, StorageStat.WAIT, new Date(System.currentTimeMillis()), StorageSize.BIG);
+            StorageDAO storage3 = new StorageDAO(2, station1.getStationId(), storagePassword3.getStoragePasswordId(), 3, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.SMALL);
 
-            StorageDAO storage4 = new StorageDAO(3, station2, storagePassword4, 1, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage5 = new StorageDAO(4, station2, storagePassword5, 2, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage6 = new StorageDAO(5, station2, storagePassword6, 3, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage7 = new StorageDAO(6, station2, storagePassword7, 4, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage8 = new StorageDAO(7, station2, storagePassword8, 5, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage4 = new StorageDAO(3, station2.getStationId(), storagePassword4.getStoragePasswordId(), 1, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage5 = new StorageDAO(4, station2.getStationId(), storagePassword5.getStoragePasswordId(), 2, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage6 = new StorageDAO(5, station2.getStationId(), storagePassword6.getStoragePasswordId(), 3, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage7 = new StorageDAO(6, station2.getStationId(), storagePassword7.getStoragePasswordId(), 4, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage8 = new StorageDAO(7, station2.getStationId(), storagePassword8.getStoragePasswordId(), 5, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
 
-            StorageDAO storage9 = new StorageDAO(8, station3, storagePassword9, 1, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage10 = new StorageDAO(9, station3, storagePassword10, 2, StorageStat.STORE, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage11 = new StorageDAO(10, station3, storagePassword11, 3, StorageStat.STORE, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage12 = new StorageDAO(11, station3, storagePassword12, 4, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage13 = new StorageDAO(12, station3, storagePassword13, 5, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
-            StorageDAO storage14 = new StorageDAO(13, station3, storagePassword14, 6, StorageStat.EMPTY, new Timestamp(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage9 = new StorageDAO(8, station3.getStationId(), storagePassword9.getStoragePasswordId(), 1, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage10 = new StorageDAO(9, station3.getStationId(), storagePassword10.getStoragePasswordId(), 2, StorageStat.STORE, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage11 = new StorageDAO(10, station3.getStationId(), storagePassword11.getStoragePasswordId(), 3, StorageStat.STORE, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage12 = new StorageDAO(11, station3.getStationId(), storagePassword12.getStoragePasswordId(), 4, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage13 = new StorageDAO(12, station3.getStationId(), storagePassword13.getStoragePasswordId(), 5, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
+            StorageDAO storage14 = new StorageDAO(13, station3.getStationId(), storagePassword14.getStoragePasswordId(), 6, StorageStat.EMPTY, new Date(System.currentTimeMillis()), StorageSize.MID);
 
             storageDAORepository.save(storage1);
             storageDAORepository.save(storage2);
@@ -119,24 +121,27 @@ public class InitDB {
             storageDAORepository.save(storage13);
             storageDAORepository.save(storage14);
 
-            OrderDAO order1 = new OrderDAO(0, null, user1, storage1, OrderStat.WAIT);
-            OrderDAO order2 = new OrderDAO(0, null, user2, storage2, OrderStat.WAIT);
-            OrderDAO order3 = new OrderDAO(0, null, user2, storage4, OrderStat.DELIVER); // 주문 - 배달 까지
+            OrderDAO order1 = new OrderDAO();
+            order1.makeOrder(user1, storage1);
+            OrderDAO order2 = new OrderDAO();
+            order2.makeOrder(user2, storage2);
+            OrderDAO order3 = new OrderDAO();
+            order3.makeOrder(user2, storage4);
 
             orderDAORepository.save(order1);
             orderDAORepository.save(order2);
             orderDAORepository.save(order3);
 
-            DeliveryDAO delivery1 = new DeliveryDAO(0, user3, null, storage5);
-            order3.addDelivery(delivery1);
-            System.out.println("DELIVERYY = " + delivery1);
-            System.out.println("order3 = " + order3);
+            DeliveryDAO delivery1 = new DeliveryDAO();
+            delivery1.makeDelivery(order2);
 
             deliveryDAORepository.save(delivery1);
             orderDAORepository.save(order3);
 
-            StoreDAO store1 = new StoreDAO(0, user1, storage10);
-            StoreDAO store2 = new StoreDAO(1, user4, storage11);
+            StoreDAO store1 = new StoreDAO();
+            store1.makeStore(user1, storage10);
+            StoreDAO store2 = new StoreDAO();
+            store2.makeStore(user4, storage11);
 
             storeDAORepository.save(store1);
             storeDAORepository.save(store2);

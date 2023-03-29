@@ -17,8 +17,6 @@ public class StoragePasswordDAO {
     @Id
     private long storagePasswordId;
 
-    long storageId;
-
     // 보관함 비밀번호(String)
     private String storagePassword;
 }
