@@ -29,24 +29,16 @@ public class Store3Bean {
         StoreDAO storeDAO = getStoreDAOBean.exec(userId);
 
         // TODO 보관 테이블에서 보관함 아이디로 보관함DAO 가져오기
-        // 에러
         StorageDAO storageDAO = getStorageDAOBean.exec(storeDAO);
-
-        // TODO 보관함DAO에서 보관함 위치 정보(StorageNumber) 파싱
-        StoragePasswordDTO storagePasswordDTO = new StoragePasswordDTO();
-        storagePasswordDTO.setStorageNum(storageDAO.getStorageNumber());
 
         // TODO 보관함 아이디(StoreId)로 보관함 패스워드DAO 가져오기
         StoragePasswordDAO storagePasswordDAO = getStoragePasswordDAOBean.exec(storeDAO.getStoreId());
-
-        // TODO 보관함 패스워드DAO에서 패스워드(StoragePassword) 파싱
-        storagePasswordDTO.setPassword(storagePasswordDAO.getStoragePassword());
-
         // TODO 보관함 아이디로 역DAO 가져오기
         StationDAO stationDAO = getStationDAOBean.exec(storeDAO.getStoreId());
 
-        // TODO 역DAO에서 역 이름 가져와서 파싱
-        storagePasswordDTO.setStationName(stationDAO.getStationName());
+        // 리턴 DTO 생성
+        StoragePasswordDTO storagePasswordDTO = new StoragePasswordDTO();
+        storagePasswordDTO.setStoragePasswordDTO(stationDAO, storageDAO, storagePasswordDAO);
 
         // TODO retrun 보관함 위치, 보관함 패스워드
         return storagePasswordDTO;

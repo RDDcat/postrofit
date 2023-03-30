@@ -28,10 +28,7 @@ public class Delivery3Bean {
         // TODO 유저 아이디로 배달 확인 확인
         DeliveryDAO deliveryDAO = getDeliveryDAOBean.exec(userId);
 
-        // TODO 주문 아이디로 주문 DAO 가져오기
         OrderDAO orderDAO = getOrderDAOBean.exec(deliveryDAO);
-
-        //
         StorageDAO storageDAO = getStorageDAOBean.exec(deliveryDAO);
         StationDAO stationDAO = getStationDAOBean.exec(storageDAO);
         StoragePasswordDAO storagePasswordDAO = getStoragePasswordDAOBean.exec(storageDAO);
