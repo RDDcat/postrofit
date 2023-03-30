@@ -1,9 +1,7 @@
 package com.postrofit.backend.Bean;
 
-import com.postrofit.backend.Bean.Small.GetDeliveryDAOBean;
-import com.postrofit.backend.Bean.Small.GetOrderDAOBean;
-import com.postrofit.backend.Model.DAO.DeliveryDAO;
-import com.postrofit.backend.Model.DAO.OrderDAO;
+import com.postrofit.backend.Bean.Small.*;
+import com.postrofit.backend.Model.DAO.*;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,6 +12,12 @@ public class Delivery3Bean {
     GetDeliveryDAOBean getDeliveryDAOBean;
     @Autowired
     GetOrderDAOBean getOrderDAOBean;
+    @Autowired
+    GetStorageDAOBean getStorageDAOBean;
+    @Autowired
+    GetStationDAOBean getStationDAOBean;
+    @Autowired
+    GetStoragePasswordDAOBean getStoragePasswordDAOBean;
 
     public StoragePasswordDTO exec(String _userId){
         // 딜리버리 쪽에서 요청이 들어와야함
@@ -27,21 +31,26 @@ public class Delivery3Bean {
         // TODO 주문 아이디로 주문 DAO 가져오기
         OrderDAO orderDAO = getOrderDAOBean.exec(deliveryDAO);
 
-        // TODO 주문 DAO에서 도착역 이름을 리턴할 곳에 넣음
+        //
+        StorageDAO storageDAO = getStorageDAOBean.exec(deliveryDAO);
+        StationDAO stationDAO = getStationDAOBean.exec(storageDAO);
+        StoragePasswordDAO storagePasswordDAO = getStoragePasswordDAOBean.exec(storageDAO);
+
+        // 리턴 DTO 생성
         StoragePasswordDTO storagePasswordDTO = new StoragePasswordDTO();
-        storagePasswordDTO.setStationName(null);
-
-        // TODO 주문 DAO에서 도착 보관함 아이디 가져오기
-
-        // TODO 도착 보관함 아이디로 도착 보관함 DAO 가져오기
-
-        // TODO 도착 보관함 DAO에서 사물함 번호 가져오기
-
-        // TODO 도착 보관함 아이디로 비밀번호 가져오기
-
-        // TODO 비밀번호 리턴 클래스에 담기
-
+        storagePasswordDTO.setStoragePasswordDTO(stationDAO, storageDAO, storagePasswordDAO);
 
         return storagePasswordDTO;
     }
 }
+
+
+
+
+
+
+
+
+
+
+

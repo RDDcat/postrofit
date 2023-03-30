@@ -1,5 +1,6 @@
 package com.postrofit.backend.Bean.Small;
 
+import com.postrofit.backend.Model.DAO.DeliveryDAO;
 import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DAO.StoreDAO;
@@ -24,5 +25,9 @@ public class GetStorageDAOBean {
 
     public StorageDAO exec(StoreDAO storeDAO) {
         return storageRepository.findStorageDAOByStorageId(storeDAO.getStorageId());
+    }
+
+    public StorageDAO exec(DeliveryDAO deliveryDAO) {
+        return storageRepository.findStorageDAOByStorageId(deliveryDAO.getStorageId());
     }
 }
