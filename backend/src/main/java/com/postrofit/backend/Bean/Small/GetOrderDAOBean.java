@@ -1,5 +1,6 @@
 package com.postrofit.backend.Bean.Small;
 
+import com.postrofit.backend.Model.DAO.DeliveryDAO;
 import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DAO.UserDAO;
 import com.postrofit.backend.Model.DTO.RequestTakeOrderDTO;
@@ -27,5 +28,9 @@ public class GetOrderDAOBean {
 
     public OrderDAO exec(RequestTakeOrderDTO requestTakeOrderDTO) {
         return orderDAORepository.findById(requestTakeOrderDTO.getOrderId()).orElse(null);
+    }
+
+    public OrderDAO exec(DeliveryDAO deliveryDAO) {
+        return orderDAORepository.findById(deliveryDAO.getOrderId()).orElse(null);
     }
 }
