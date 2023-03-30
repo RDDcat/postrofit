@@ -19,8 +19,6 @@ public class OrderDAO {
     @Id @GeneratedValue
     private long orderId;
 
-    // 주문시간
-    Date createAt;
 
     long deliveryId;
 
@@ -30,6 +28,8 @@ public class OrderDAO {
     // 출발 보관함 아이디
     long storageId;
 
+    // 주문시간
+    Date createAt;
 
     // 주문 상태
     @Enumerated(EnumType.STRING)
