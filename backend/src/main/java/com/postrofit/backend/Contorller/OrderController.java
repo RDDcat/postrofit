@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import com.postrofit.backend.Service.OrderService;
@@ -52,8 +53,8 @@ public class OrderController {
 
     // TODO 주문 4
     @PostMapping("/make")
-    public void makeOrderPOST(@RequestBody String body){
-        orderService.makeOrderPOST(body);
+    public void makeOrderPOST(@RequestBody RequestMakeOrderDTO requestMakeOrderDTO){
+        orderService.makeOrderPOST(requestMakeOrderDTO);
     }
 
 

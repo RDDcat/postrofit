@@ -18,4 +18,8 @@ public class SaveOrderBean {
         orderDAORepository.save(order);
         storageDAORepository.save(storageDAO);
     }
+
+    public void exec(OrderDAO orderDAO) {
+        orderDAORepository.save(orderDAO);
+    }
 }

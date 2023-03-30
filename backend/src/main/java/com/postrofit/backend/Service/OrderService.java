@@ -1,9 +1,11 @@
 package com.postrofit.backend.Service;
 
 import com.postrofit.backend.Bean.MakeOrderGETBean;
+import com.postrofit.backend.Bean.MakeOrderBean;
 import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Order2Bean;
 import com.postrofit.backend.Bean.Order3Bean;
+import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class OrderService {
     Order3Bean order3Bean;
     @Autowired
     MakeOrderGETBean makeOrderGETBean;
+    @Autowired
+    MakeOrderBean makeOrderBean;
 
     public List<StorageStatDTO> order1(String start){
         return storageStatBean.exec(start);
@@ -37,7 +41,8 @@ public class OrderService {
         makeOrderGETBean.exec(userId, stationName, storageNum);
     }
 
-    public void makeOrderPOST(String body) {
-        System.out.println("제작 예정 아직 안함");
+    public void makeOrderPOST(RequestMakeOrderDTO requestMakeOrderDTO) {
+        makeOrderBean.exec(requestMakeOrderDTO);
+
     }
 }
