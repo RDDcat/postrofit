@@ -29,6 +29,7 @@ public class Store3Bean {
         StoreDAO storeDAO = getStoreDAOBean.exec(userId);
 
         // TODO 보관 테이블에서 보관함 아이디로 보관함DAO 가져오기
+        // 에러
         StorageDAO storageDAO = getStorageDAOBean.exec(storeDAO);
 
         // TODO 보관함DAO에서 보관함 위치 정보(StorageNumber) 파싱
