@@ -40,7 +40,7 @@ public class OrderController {
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
     // 사용자가 1개의 오더만 가질때 작동
     @GetMapping("/storage/info/{userId}")
-    public StoragePasswordDTO orderInfo(@PathVariable long userId){
+    public StoragePasswordDTO orderInfo(@PathVariable long userId) {
         return orderService.order3(userId);
     }
 
@@ -49,6 +49,7 @@ public class OrderController {
     public void makeOrderGET(@PathVariable long userId, @PathVariable String stationName, @PathVariable int storageNum){
         orderService.makeOrderGET(userId, stationName, storageNum);
     }
+    
     // TODO 주문 4
     @PostMapping("/make")
     public void makeOrderPOST(@RequestBody String body){

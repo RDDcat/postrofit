@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class StationDAO {
 
     @Id
-    private int stationId;
+    private long stationId;
 
     // 역 이름
     @Column
