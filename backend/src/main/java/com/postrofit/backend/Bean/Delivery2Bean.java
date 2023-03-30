@@ -9,10 +9,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Delivery2Bean {
-    @Autowired
     GetOrderDAOBean getOrderDAOBean;
-    @Autowired
     MakeDeliveryBean makeDeliveryBean;
+
+    @Autowired
+    public Delivery2Bean(GetOrderDAOBean getOrderDAOBean, MakeDeliveryBean makeDeliveryBean) {
+        this.getOrderDAOBean = getOrderDAOBean;
+        this.makeDeliveryBean = makeDeliveryBean;
+    }
 
     public StoragePasswordDTO exec(String start, String end, String userId){
         // 맡겨둔 주문 확인후 해당 유저가 배달주문 점유

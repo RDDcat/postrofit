@@ -17,7 +17,7 @@ public class GetStorageIdBean {
     public StorageDAO exec(String stationName, int storageNum) {
         StationDAO stationDAO = stationDAORepository.findByStationName(stationName);
 
-        StorageDAO storageDAO = storageDAORepository.findStorageDAOByStationDAOAndStorageNumber(stationDAO, storageNum);
+        StorageDAO storageDAO = storageDAORepository.findStorageDAOByStationIdAndStorageNumber(stationDAO.getStationId(), storageNum);
 
         return storageDAO;
     }

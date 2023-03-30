@@ -14,7 +14,7 @@ public class GetStorageListBean {
     StorageDAORepository storageDAORepository;
 
     public List<StorageDAO> exec(StationDAO stationDAO){
-        List<StorageDAO> storageDAOList = storageDAORepository.findStorageDAOByStationDAO(stationDAO);
+        List<StorageDAO> storageDAOList = storageDAORepository.findStorageDAOByStationId(stationDAO.getStationId());
 
         return storageDAOList;
     }

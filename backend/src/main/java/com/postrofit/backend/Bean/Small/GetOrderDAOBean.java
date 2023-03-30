@@ -18,7 +18,7 @@ public class GetOrderDAOBean {
     }
 
     public OrderDAO exec(UserDAO userDAO){
-        Optional<OrderDAO> orderDAO = orderDAORepository.findOrderDAOByUserDAO(userDAO);
+        Optional<OrderDAO> orderDAO = orderDAORepository.findOrderDAOByUserId(userDAO.getUserId());
 
         return orderDAO.orElse(null);
 

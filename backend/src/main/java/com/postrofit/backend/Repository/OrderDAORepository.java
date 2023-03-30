@@ -9,5 +9,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface OrderDAORepository extends JpaRepository<OrderDAO, Long> {
-    Optional<OrderDAO> findOrderDAOByUserDAO(UserDAO userDAO);
+    Optional<OrderDAO> findOrderDAOByUserId(long userId);
 }
