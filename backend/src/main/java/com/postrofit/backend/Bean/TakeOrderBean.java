@@ -1,33 +1,31 @@
 package com.postrofit.backend.Bean;
 
 import com.postrofit.backend.Bean.Small.GetOrderDAOBean;
-import com.postrofit.backend.Bean.Small.MakeDeliveryBean;
+import com.postrofit.backend.Bean.Small.CreateDeliveryBean;
 import com.postrofit.backend.Model.DAO.OrderDAO;
+import com.postrofit.backend.Model.DTO.RequestTakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Delivery2Bean {
+public class TakeOrderBean {
     GetOrderDAOBean getOrderDAOBean;
-    MakeDeliveryBean makeDeliveryBean;
+    CreateDeliveryBean createDeliveryBean;
 
     @Autowired
-    public Delivery2Bean(GetOrderDAOBean getOrderDAOBean, MakeDeliveryBean makeDeliveryBean) {
+    public TakeOrderBean(GetOrderDAOBean getOrderDAOBean, CreateDeliveryBean createDeliveryBean) {
         this.getOrderDAOBean = getOrderDAOBean;
-        this.makeDeliveryBean = makeDeliveryBean;
+        this.createDeliveryBean = createDeliveryBean;
     }
 
-    public StoragePasswordDTO exec(String start, String end, String userId){
+    public StoragePasswordDTO exec(RequestTakeOrderDTO requestTakeOrderDTO){
         // 맡겨둔 주문 확인후 해당 유저가 배달주문 점유
-        // TODO 출발 도착역으로 주문 확인
-        OrderDAO orderDAO = getOrderDAOBean.exec(start, end, userId);
+        // TODO 오더에 딜리버리 추가 (유효성 검사?)
+        OrderDAO orderDAO = getOrderDAOBean.exec(requestTakeOrderDTO);
 
-        // TODO 유저 아이디를 long값으로 변경
-        long orderId = orderDAO.getOrderId();
-
-        // TODO 유저 아이디로 배달 주문 배치
-        makeDeliveryBean.exec(orderId);
+        // TODO 딜리버리 추가
+        createDeliveryBean.exec(orderDAO, requestTakeOrderDTO.getUserId());
         
         // TODO 잡은 배달 주문에서 보관함 아이디 가져오기
 

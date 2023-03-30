@@ -133,7 +133,7 @@ public class InitDB {
             orderDAORepository.save(order3);
 
             DeliveryDAO delivery1 = new DeliveryDAO();
-            delivery1.makeDelivery(order2);
+            delivery1.makeDelivery(order2, 2);
 
             deliveryDAORepository.save(delivery1);
             orderDAORepository.save(order3);
