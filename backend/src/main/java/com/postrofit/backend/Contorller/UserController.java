@@ -15,19 +15,19 @@ public class UserController {
     // 유저가 이용중인 보관하기 정보
     @GetMapping("/store/{userId}")
     public String getUserStoreInfo(@PathVariable long userId){
-        return "welcome s";
+        return "getUserStoreInfo 유저가 이용중인 보관하기 정보";
     }
 
     // 보관하기 - 보관정보 디테일
     @GetMapping("/store/{storageId}")
     public String getUserStoreStorage(@PathVariable long storageId){
-        return "welcome s";
+        return "getUserStoreStorage 보관하기 - 보관정보 디테일";
     }
 
     // 히스토리(이용내역) List + 페이징 기능까지
     @GetMapping("/history/{userId}")
     public String getUserHistory(@PathVariable long userId){
-        return "welcome s";
+        return "getUserHistory 히스토리(이용내역) List + 페이징 기능까지";
     }
 
     // 히스토리(이용내역) List + 페이징 기능까지
