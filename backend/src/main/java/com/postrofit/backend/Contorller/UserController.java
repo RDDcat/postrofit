@@ -1,12 +1,16 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.HistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.RequestHistoryDetailDTO;
+import com.postrofit.backend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
 @RestController("/user")
 public class UserController {
+    @Autowired
+    UserService userService;
 
     // 유저가 이용중인 보관하기 정보
     @GetMapping("/store/{userId}")
@@ -28,8 +32,8 @@ public class UserController {
 
     // 히스토리(이용내역) List + 페이징 기능까지
     @PostMapping("/history/detail")
-    public String getUserHistoryDetail(@RequestBody RequestHistoryDetailDTO requestHistoryDetailDTO){
-        return "welcome s";
+    public HistoryDetailDTO getUserHistoryDetail(@RequestBody RequestHistoryDetailDTO requestHistoryDetailDTO){
+        return userService.getUserHistoryDetail(requestHistoryDetailDTO);
     }
 
 
