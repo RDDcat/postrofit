@@ -23,7 +23,6 @@ public class StorageStatBean {
 
     // 역이름 받아서 해당 역 보관함 정보 리턴
     public List<StorageStatDTO> exec(String start){
-        System.out.println("인풋값 + " +start);
         // TODO 역 id 가져오기
         StationDAO stationDAO = getStationDAOBean.exec(start);
 
