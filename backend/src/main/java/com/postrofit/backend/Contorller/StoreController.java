@@ -33,15 +33,15 @@ public class StoreController {
     // TODO 보관 2
     // TODO income (역이름) (사이즈)
     // TODO return 보관함 정보 > 사이즈별 가격
-    @GetMapping("/profit/{start}/{size}")
-    public StoreProfitDTO orderCost(@PathVariable String start , @PathVariable String size){return storeService.store2(start, size);}
+    @GetMapping("/fee/{start}/{size}")
+    public StoreProfitDTO storeFee(@PathVariable String start , @PathVariable String size){return storeService.store2(start, size);}
 
     // TODO Get방식
     // TODO 보관 3
     // TODO income (사용자 아이디) (보관함 번호)
     // TODO return 보관함 정보 > 보관함 번호, 보관함 비밀번호
-    @GetMapping("/profit/{userId}")
-    public StoragePasswordDTO orderInfo(@PathVariable String userId){return storeService.store3(userId);
+    @GetMapping("/password/{userId}")
+    public StoragePasswordDTO storePassword(@PathVariable String userId){return storeService.store3(userId);
     }
 
 
