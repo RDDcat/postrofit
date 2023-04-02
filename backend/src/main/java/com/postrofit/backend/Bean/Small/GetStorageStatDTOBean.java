@@ -19,6 +19,7 @@ public class GetStorageStatDTOBean {
             storageStatDTO.setStorageId(storage.getStorageId());
             storageStatDTO.setStorageNumber(storage.getStorageNumber());
             storageStatDTO.setStorageStat(storage.getStorageStat());
+            storageStatDTO.setStorageSize(storage.getStorageSize());
             storageStatDTOS.add(storageStatDTO);
         }
         return storageStatDTOS;
