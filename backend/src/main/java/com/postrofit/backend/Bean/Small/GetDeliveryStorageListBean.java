@@ -28,8 +28,12 @@ public class GetDeliveryStorageListBean {
         // 옮길게요 들어온 사람한테만 보여주기 동시성 어케 해결하지..?
         // 다른사람 못들어오게 데이터 업데이트
 
+        // 역 정보 가져오기
+        StationDAO startStationDAO = getStationDAOBean.exec(start);
+        StationDAO endStationDAO = getStationDAOBean.exec(end);
+
         // Wait 상태인거 1개 골라오기
-        OrderDAO orderDAO = getWaitingOrderBean.exec(start, end);
+        OrderDAO orderDAO = getWaitingOrderBean.exec(startStationDAO, endStationDAO);
 
         // 그 역의 보관함 전체 리스트 가져오기 (사이즈랑 번호 필요)
         StationDAO stationDAO = getStationDAOBean.exec(start);

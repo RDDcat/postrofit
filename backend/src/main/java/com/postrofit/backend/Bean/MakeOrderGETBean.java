@@ -28,7 +28,7 @@ public class MakeOrderGETBean {
 
         // 유저 아이디랑 보관함 번호를 저장하고, order_stat 초기값 delivery id는 null 로 디비에 저장
         OrderDAO order = new OrderDAO();
-        order.makeOrder(userDAO, storageDAO);
+//        order.makeOrder(userDAO, storageDAO);
         storageDAO.updateStat(StorageStat.WAIT);
 
         saveOrderBean.exec(order, storageDAO);

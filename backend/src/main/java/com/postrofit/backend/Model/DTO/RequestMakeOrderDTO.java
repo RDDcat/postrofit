@@ -6,4 +6,5 @@ import lombok.Data;
 public class RequestMakeOrderDTO {
     long userId;
     long storageId;
+    String endStationName;
 }

@@ -122,11 +122,11 @@ public class InitDB {
             storageDAORepository.save(storage14);
 
             OrderDAO order1 = new OrderDAO();
-            order1.makeOrder(user1, storage1);
+            order1.makeOrder(user1, storage1, station2);
             OrderDAO order2 = new OrderDAO();
-            order2.makeOrder(user2, storage2);
+            order2.makeOrder(user2, storage2, station3);
             OrderDAO order3 = new OrderDAO();
-            order3.makeOrder(user2, storage4);
+            order3.makeOrder(user2, storage4, station1);
 
             orderDAORepository.save(order1);
             orderDAORepository.save(order2);

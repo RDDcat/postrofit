@@ -28,6 +28,12 @@ public class OrderDAO {
     // 출발 보관함 아이디
     long storageId;
 
+    // 출발역 아이디
+    long startStationId;
+
+    // 도착역 아이디
+    long endStationId;
+
     // 주문시간
     Date createAt;
 
@@ -41,10 +47,12 @@ public class OrderDAO {
     }
 
     @Transactional
-    public void makeOrder(UserDAO userDAO, StorageDAO storageDAO){
+    public void makeOrder(UserDAO userDAO, StorageDAO storageDAO, StationDAO stationDAO ){
         this.orderStat = OrderStat.WAIT;
         this.userId = userDAO.getUserId();
         this.storageId =storageDAO.getStorageId();
+        this.startStationId = storageDAO.getStationId();
+        this.endStationId = stationDAO.getStationId();
 
     }
 
