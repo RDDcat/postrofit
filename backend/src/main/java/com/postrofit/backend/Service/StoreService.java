@@ -3,6 +3,7 @@ package com.postrofit.backend.Service;
 import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Store2Bean;
 import com.postrofit.backend.Bean.Store3Bean;
+import com.postrofit.backend.Model.DTO.RequestStoreDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import com.postrofit.backend.Model.DTO.StoreProfitDTO;
@@ -28,5 +29,9 @@ public class StoreService {
 
     public StoragePasswordDTO store3(String userId) {
         return store3Bean.exec(userId);
+    }
+
+    public void makeStore(RequestStoreDTO requestStoreDTO) {
+
     }
 }

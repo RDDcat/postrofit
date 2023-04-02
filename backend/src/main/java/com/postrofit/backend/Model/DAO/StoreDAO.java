@@ -26,9 +26,9 @@ public class StoreDAO {
 
     Date createAt;
 
-    public void makeStore(UserDAO user1, StorageDAO storage10) {
+    public void makeStore(UserDAO user1, StorageDAO storageDAO) {
         this.userId = user1.getUserId();
-        this.storageId = storage10.getStorageId();
+        this.storageId = storageDAO.getStorageId();
         this.createAt = new Date(System.currentTimeMillis());
     }
 }

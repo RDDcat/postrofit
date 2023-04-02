@@ -8,7 +8,6 @@ import com.postrofit.backend.Repository.OrderDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -21,7 +20,7 @@ public class GetOrderDAOBean {
     }
 
     public OrderDAO exec(UserDAO userDAO){
-        Optional<OrderDAO> orderDAO = orderDAORepository.findOrderDAOByUserId(userDAO.getUserId());
+        Optional<OrderDAO> orderDAO = orderDAORepository.findTop1OrderDAOByUserId(userDAO.getUserId());
 
         return orderDAO.orElse(null);
 

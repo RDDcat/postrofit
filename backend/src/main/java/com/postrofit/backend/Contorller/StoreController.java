@@ -1,15 +1,13 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.RequestStoreDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
 import com.postrofit.backend.Model.DTO.StoreProfitDTO;
 import com.postrofit.backend.Service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,6 +41,13 @@ public class StoreController {
     @GetMapping("/password/{userId}")
     public StoragePasswordDTO storePassword(@PathVariable String userId){return storeService.store3(userId);
     }
+
+    // 보관 주문
+    @PostMapping("/")
+    public void makeStore(@RequestBody RequestStoreDTO requestStoreDTO){
+        storeService.makeStore(requestStoreDTO);
+    }
+
 
 
 }
