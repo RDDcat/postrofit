@@ -16,6 +16,7 @@ public class GetStorageStatDTOBean {
         List<StorageStatDTO> storageStatDTOS = new ArrayList<>();
         for(StorageDAO storage : start){
             StorageStatDTO storageStatDTO = new StorageStatDTO(); // new 연산을 이렇게 많이 해도 괜찮을까...
+            storageStatDTO.setStorageId(storage.getStorageId());
             storageStatDTO.setStorageNumber(storage.getStorageNumber());
             storageStatDTO.setStorageStat(storage.getStorageStat());
             storageStatDTOS.add(storageStatDTO);
