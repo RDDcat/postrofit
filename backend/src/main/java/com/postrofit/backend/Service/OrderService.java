@@ -5,6 +5,7 @@ import com.postrofit.backend.Bean.MakeOrderBean;
 import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Order2Bean;
 import com.postrofit.backend.Bean.Order3Bean;
+import com.postrofit.backend.Model.DTO.OrderCostDTO;
 import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
@@ -29,8 +30,8 @@ public class OrderService {
     public List<StorageStatDTO> order1(String start){
         return storageStatBean.exec(start);
     }
-    public int order2(String start, String end, String size){
-        return order2Bean.exec(start, end, size);
+    public OrderCostDTO order2(String start, String end){
+        return order2Bean.exec(start, end);
     }
     public StoragePasswordDTO order3(long userId){
         return order3Bean.exec(userId);

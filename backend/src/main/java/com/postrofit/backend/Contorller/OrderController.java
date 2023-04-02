@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DTO.OrderCostDTO;
 import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
@@ -30,9 +31,9 @@ public class OrderController {
     // TODO 주문 2
     // TODO income (출발역) (도착역) (사이즈)
     // TODO return 배달비용
-    @GetMapping("/cost/{start}/{end}/{size}")
-    public int orderCost(@PathVariable String start, @PathVariable String end,@PathVariable String size){
-        return orderService.order2(start, end, size);
+    @GetMapping("/cost/{start}/{end}")
+    public OrderCostDTO orderCost(@PathVariable String start, @PathVariable String end){
+        return orderService.order2(start, end);
     }
 
     // TODO Get방식
