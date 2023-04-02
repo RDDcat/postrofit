@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("/user")
+@RestController
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     UserService userService;
@@ -19,7 +20,7 @@ public class UserController {
     }
 
     // 보관하기 - 보관정보 디테일
-    @GetMapping("/store/{storageId}")
+    @GetMapping("/store/storage/{storageId}")
     public String getUserStoreStorage(@PathVariable long storageId){
         return "getUserStoreStorage 보관하기 - 보관정보 디테일";
     }
@@ -30,7 +31,7 @@ public class UserController {
         return "getUserHistory 히스토리(이용내역) List + 페이징 기능까지";
     }
 
-    // 히스토리(이용내역) List + 페이징 기능까지
+    // 히스토리(이용내역) - 디테일
     @PostMapping("/history/detail")
     public HistoryDetailDTO getUserHistoryDetail(@RequestBody RequestHistoryDetailDTO requestHistoryDetailDTO){
         return userService.getUserHistoryDetail(requestHistoryDetailDTO);
