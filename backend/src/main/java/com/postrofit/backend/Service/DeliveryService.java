@@ -1,7 +1,7 @@
 package com.postrofit.backend.Service;
 
 import com.postrofit.backend.Bean.Delivery1Bean;
-import com.postrofit.backend.Bean.Small.GetDeliveryStorageListBean;
+import com.postrofit.backend.Bean.GetDeliveryStorageListBean;
 import com.postrofit.backend.Bean.TakeOrderBean;
 import com.postrofit.backend.Bean.Delivery3Bean;
 import com.postrofit.backend.Model.DTO.DeliveryCostDTO;
