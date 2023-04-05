@@ -1,5 +1,6 @@
 package com.postrofit.backend.BeanTest.Small;
 
+import com.netflix.discovery.converters.Auto;
 import com.postrofit.backend.Bean.Small.*;
 import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DAO.UserDAO;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestSmallBeans {
+
     @Autowired
     GetOrderDAOBean getOrderDAOBean;
 
@@ -18,12 +20,12 @@ public class TestSmallBeans {
     @Test
     @DisplayName("testGetOrderDAOBean 테스트 : UserDAO")
     void testGetOrderDAOBean_1(){
-        UserDAO userDAO = new UserDAO();
+        UserDAO userDAO = new UserDAO();  // input output 생성
         OrderDAO expect = new OrderDAO();
 
-        OrderDAO orderDAO = getOrderDAOBean.exec(userDAO);
+        OrderDAO orderDAO = getOrderDAOBean.exec(userDAO);   // bean 통과
 
-        assertEquals(expect, orderDAO);
+        assertEquals(expect, orderDAO); // 검증 
     }
 
     @Test
