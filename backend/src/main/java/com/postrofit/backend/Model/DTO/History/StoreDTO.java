@@ -1,6 +1,5 @@
 package com.postrofit.backend.Model.DTO.History;
 
-public class DeliveryDTO implements HistoryDTO{
-
+public class StoreDTO implements HistoryDTO {
 
 }

@@ -1,5 +1,5 @@
 package com.postrofit.backend.Model.Enum;
 
 public enum OrderStat {
-    WAIT, DELIVER, ARRIVE
+    START, WAIT, DELIVER, ARRIVE, END, CANCEL
 }
