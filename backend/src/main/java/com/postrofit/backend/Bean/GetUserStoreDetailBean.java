@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GetUserStoreDetailBean {
-    public StorageDetailDTO exec(){
+    public StorageDetailDTO exec(long storageId){
 
         return null;
     }

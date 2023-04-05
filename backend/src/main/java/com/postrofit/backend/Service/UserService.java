@@ -27,16 +27,16 @@ public class UserService {
     @Autowired
     GetUserHistoryDetailBean getUserHistoryDetailBean;
 
-    public void getUserStoreInfo(){
-        getUserStoreBean.exec();
+    public void getUserStoreInfo(long userId){
+        getUserStoreBean.exec(userId);
     }
 
-    public StorageDetailDTO getUserStoreStorageDetail(){
-        return getUserStoreDetailBean.exec();
+    public StorageDetailDTO getUserStoreStorageDetail(long storageId){
+        return getUserStoreDetailBean.exec(storageId);
     }
 
-    public List<HistoryDTO> getUserHistory(){
-        return getUserHistoryBean.exec();
+    public List<HistoryDTO> getUserHistory(long userId){
+        return getUserHistoryBean.exec(userId);
     }
 
     public HistoryDetailDTO getUserHistoryDetail(RequestHistoryDetailDTO requestHistoryDetailDTO) {

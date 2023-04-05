@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GetUserStoreBean {
 
-    public void exec(){
+    public void exec(long userId){
 
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public class GetUserHistoryBean {
-    public List<HistoryDTO> exec(){
+    public List<HistoryDTO> exec(long userId){
 
         return null;
     }

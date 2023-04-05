@@ -20,20 +20,20 @@ public class UserController {
     // 유저가 이용중인 보관하기 정보
     @GetMapping("/store/{userId}")
     public String getUserStoreInfo(@PathVariable long userId){
-        userService.getUserStoreInfo();
+        userService.getUserStoreInfo(userId);
         return "getUserStoreInfo 유저가 이용중인 보관하기 정보";
     }
 
     // 보관하기 - 보관정보 디테일
     @GetMapping("/store/storage/{storageId}")
     public StorageDetailDTO getUserStoreStorageDetail(@PathVariable long storageId){
-        return userService.getUserStoreStorageDetail();
+        return userService.getUserStoreStorageDetail(storageId);
     }
 
     // 히스토리(이용내역) List + 페이징 기능까지
     @GetMapping("/history/{userId}")
     public List<HistoryDTO> getUserHistory(@PathVariable long userId){
-        return userService.getUserHistory();
+        return userService.getUserHistory(userId);
     }
 
     // 히스토리(이용내역) - 디테일
