@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -35,7 +36,7 @@ public class OrderDAO {
     long endStationId;
 
     // 주문시간
-    Date createAt;
+    LocalDateTime createAt;
 
     // 주문 상태
     @Enumerated(EnumType.STRING)
