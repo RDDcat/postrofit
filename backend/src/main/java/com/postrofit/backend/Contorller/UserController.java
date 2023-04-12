@@ -1,6 +1,7 @@
 package com.postrofit.backend.Contorller;
 
 import com.postrofit.backend.Model.DTO.History.HistoryDTO;
+import com.postrofit.backend.Model.DTO.History.StoreDTO;
 import com.postrofit.backend.Model.DTO.HistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.RequestHistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.StorageDetailDTO;
@@ -20,9 +21,8 @@ public class UserController {
 
     // 유저가 이용중인 보관하기 정보
     @GetMapping("/store/{userId}")
-    public String getUserStoreInfo(@PathVariable long userId){
-        userService.getUserStoreInfo(userId);
-        return "getUserStoreInfo 유저가 이용중인 보관하기 정보";
+    public StoreDTO getUserStoreInfo(@PathVariable long userId){
+        return userService.getUserStoreInfo(userId);
     }
 
     // 보관하기 - 보관정보 디테일
