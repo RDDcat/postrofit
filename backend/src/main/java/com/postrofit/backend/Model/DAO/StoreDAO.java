@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="tbl_table")
@@ -24,11 +25,11 @@ public class StoreDAO {
     // 보관함 아이디(FK)
     long storageId;
 
-    Date createAt;
+    Timestamp createAt;
 
     public void makeStore(UserDAO user1, StorageDAO storageDAO) {
         this.userId = user1.getUserId();
         this.storageId = storageDAO.getStorageId();
-        this.createAt = new Date(System.currentTimeMillis());
+        this.createAt = new Timestamp(System.currentTimeMillis());
     }
 }

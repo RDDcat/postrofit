@@ -15,4 +15,8 @@ public class GetStoreDAOBean {
         // ????? ㅋㅋㅋㅋㅋ
         return storeDAORepository.findStoreDAOByUserId(Long.parseLong(userId));
     }
+
+    public StoreDAO exec(long userId) {
+        return storeDAORepository.findStoreDAOByUserId(userId);
+    }
 }

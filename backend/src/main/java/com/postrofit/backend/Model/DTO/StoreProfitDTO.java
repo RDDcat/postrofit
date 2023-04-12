@@ -7,7 +7,7 @@ import lombok.Data;
 public class StoreProfitDTO {
 
     // 보관함 사이즈
-    String size;
+    StorageSize storageSize;
 
     // 기본 요금
     int profit;

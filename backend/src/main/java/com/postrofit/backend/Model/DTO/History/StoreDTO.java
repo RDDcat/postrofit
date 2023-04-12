@@ -1,5 +1,23 @@
 package com.postrofit.backend.Model.DTO.History;
 
-public class StoreDTO implements HistoryDTO {
+import com.postrofit.backend.Model.DAO.StoreDAO;
+import com.postrofit.backend.Model.DTO.StoreProfitDTO;
+import com.postrofit.backend.Model.Enum.StorageSize;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
+@Data
+@NoArgsConstructor
+public class StoreDTO implements HistoryDTO {
+    int price;
+    StorageSize storageSize;
+    Timestamp timestamp;
+
+    public StoreDTO (StoreDAO storeDAO, StoreProfitDTO storeProfitDTO){
+        this.price = storeProfitDTO.getProfit();
+        this.storageSize = storeProfitDTO.getStorageSize();
+        this.timestamp = storeDAO.getCreateAt();
+    }
 }
