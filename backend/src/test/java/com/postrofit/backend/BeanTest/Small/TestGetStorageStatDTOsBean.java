@@ -1,14 +1,14 @@
 package com.postrofit.backend.BeanTest.Small;
 
-import com.postrofit.backend.Bean.Small.GetStorageStatDTOBean;
+import com.postrofit.backend.Bean.Small.GetStorageStatDTOsBean;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class TestGetStorageStatDTOBean {
+public class TestGetStorageStatDTOsBean {
 
     @Autowired
-    GetStorageStatDTOBean getStorageStatDTOBean;
+    GetStorageStatDTOsBean getStorageStatDTOsBean;
 
     @Test
     @DisplayName("testGetStorageStatDTOBean 테스트 : List<StorageDAO> start")

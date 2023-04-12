@@ -19,7 +19,7 @@ public class GetDeliveryStorageListBean {
     @Autowired
     GetStorageListBean getStorageListBean;
     @Autowired
-    GetStorageStatDTOBean getStorageStatDTOBean;
+    GetStorageStatDTOsBean getStorageStatDTOsBean;
     @Autowired
     CleanStatStorageStatDTOBean cleanStatStorageStatDTOBean;
     @Autowired
@@ -39,7 +39,7 @@ public class GetDeliveryStorageListBean {
         // 그 역의 보관함 전체 리스트 가져오기 (사이즈랑 번호 필요)
         StationDAO stationDAO = getStationDAOBean.exec(start);
         List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationDAO);
-        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOBean.exec(StorageDAOS);
+        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);
 
 
         // 주문에 적힌 스토리지만 WAIT 상태고 나머지는 empty 상태 넣어주기

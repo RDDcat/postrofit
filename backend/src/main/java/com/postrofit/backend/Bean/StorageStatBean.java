@@ -2,7 +2,7 @@ package com.postrofit.backend.Bean;
 
 import com.postrofit.backend.Bean.Small.GetStationDAOBean;
 import com.postrofit.backend.Bean.Small.GetStorageListBean;
-import com.postrofit.backend.Bean.Small.GetStorageStatDTOBean;
+import com.postrofit.backend.Bean.Small.GetStorageStatDTOsBean;
 import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.StorageStatDTO;
@@ -19,7 +19,7 @@ public class StorageStatBean {
     @Autowired
     GetStorageListBean getStorageListBean;
     @Autowired
-    GetStorageStatDTOBean getStorageStatDTOBean;
+    GetStorageStatDTOsBean getStorageStatDTOsBean;
 
     // 역이름 받아서 해당 역 보관함 정보 리턴
     public List<StorageStatDTO> exec(String start){
@@ -30,7 +30,7 @@ public class StorageStatBean {
         List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationDAO);
 
         // TODO 보관함 전체를 상태값만 가진 DTO로 변경
-        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOBean.exec(StorageDAOS);
+        List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);
         System.out.println("결과값 storageStatDTOS + " +storageStatDTOS);
 
         // TODO 결과리턴
