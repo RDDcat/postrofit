@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store")
+@CrossOrigin("*")
 public class StoreController {
     @Autowired
     StoreService storeService;

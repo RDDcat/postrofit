@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/delivery")
+@CrossOrigin("*")
 public class DeliveryController {
     @Autowired
     DeliveryService service;
