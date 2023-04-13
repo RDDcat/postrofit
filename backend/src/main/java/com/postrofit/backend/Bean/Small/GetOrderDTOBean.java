@@ -17,7 +17,11 @@ public class GetOrderDTOBean {
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setStartStationName(startStationDAO.getStationName());
         orderDTO.setEndStationName(endStationDAO.getStationName());
-        orderDTO.setPrice(orderDAO.getPrice());
+        if(orderDTO.getPrice() == 0){
+            orderDTO.setPrice(2000);
+        }else {
+            orderDTO.setPrice(orderDAO.getPrice());
+        }
         orderDTO.setCreateAt(orderDAO.getCreateAt());
         orderDTO.setOrderStat(orderDAO.getOrderStat());
 

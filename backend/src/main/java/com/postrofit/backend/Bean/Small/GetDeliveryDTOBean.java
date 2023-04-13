@@ -25,7 +25,11 @@ public class GetDeliveryDTOBean {
 
         deliveryDTO.setStartStationName(startStationDAO.getStationName());
         deliveryDTO.setEndStationName(endStationDAO.getStationName());
-        deliveryDTO.setPrice(deliveryDAO.getPrice());
+        if(deliveryDAO.getPrice() == 0){
+            deliveryDTO.setPrice(2000);
+        }else {
+            deliveryDTO.setPrice(deliveryDAO.getPrice());
+        }
         deliveryDTO.setCreateAt(deliveryDAO.getCreateAt());
         if(deliveryDAO.getFinishedAt()!= null){
             deliveryDTO.setFinishedAt(deliveryDAO.getFinishedAt());
