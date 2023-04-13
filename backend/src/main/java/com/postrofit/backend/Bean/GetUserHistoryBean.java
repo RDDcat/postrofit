@@ -10,7 +10,6 @@ import com.postrofit.backend.Model.DTO.History.OrderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -22,7 +21,7 @@ public class GetUserHistoryBean {
     @Autowired
     GetDeliveryDAOsBean getDeliveryDAOsBean;
     @Autowired
-    MergeHistoryDTOsBeam mergeHistoryDTOsBeam;
+    MergeHistoryDTOsBean mergeHistoryDTOsBean;
     @Autowired
     GetOrderDTOsBean getOrderDTOsBean;
     @Autowired
@@ -41,7 +40,7 @@ public class GetUserHistoryBean {
         List<DeliveryDTO> deliveryDTOS = getDeliveryDTOsBean.exec(deliveryDAOS);
 
         // 패키징
-        List<HistoryDTO> historyDTOS = mergeHistoryDTOsBeam.exec(orderDTOS, deliveryDTOS);
+        List<HistoryDTO> historyDTOS = mergeHistoryDTOsBean.exec(orderDTOS, deliveryDTOS);
 
         return historyDTOS;
     }
