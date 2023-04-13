@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,7 +20,6 @@ public class OrderDAO {
 
     @Id @GeneratedValue
     private long orderId;
-
 
     long deliveryId;
 
@@ -36,7 +36,10 @@ public class OrderDAO {
     long endStationId;
 
     // 주문시간
-    LocalDateTime createAt;
+    Timestamp createAt;
+
+    // 맡긴 비용
+    int price;
 
     // 주문 상태
     @Enumerated(EnumType.STRING)
@@ -54,7 +57,7 @@ public class OrderDAO {
         this.storageId =storageDAO.getStorageId();
         this.startStationId = storageDAO.getStationId();
         this.endStationId = stationDAO.getStationId();
-
+        this.createAt = new Timestamp(System.currentTimeMillis());
     }
 
 }
