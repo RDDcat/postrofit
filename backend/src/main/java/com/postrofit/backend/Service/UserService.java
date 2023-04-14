@@ -6,7 +6,7 @@ import com.postrofit.backend.Bean.GetUserStoreBean;
 import com.postrofit.backend.Bean.GetUserStoreDetailBean;
 import com.postrofit.backend.Model.DTO.History.HistoryDTO;
 import com.postrofit.backend.Model.DTO.History.StoreDTO;
-import com.postrofit.backend.Model.DTO.HistoryDetailDTO;
+import com.postrofit.backend.Model.DTO.History.HistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.RequestHistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.StorageDetailDTO;
 import org.springframework.beans.factory.annotation.Autowired;

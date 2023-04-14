@@ -1,5 +1,6 @@
 package com.postrofit.backend.Model.DAO;
 
+import com.postrofit.backend.Model.Enum.StoreStat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -27,9 +28,12 @@ public class StoreDAO {
 
     Timestamp createAt;
 
+    StoreStat storeStat;
+
     public void makeStore(UserDAO user1, StorageDAO storageDAO) {
         this.userId = user1.getUserId();
         this.storageId = storageDAO.getStorageId();
         this.createAt = new Timestamp(System.currentTimeMillis());
+        this.storeStat = StoreStat.ACTIVE;
     }
 }

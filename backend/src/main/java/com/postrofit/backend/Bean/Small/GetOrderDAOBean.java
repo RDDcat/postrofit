@@ -3,6 +3,7 @@ package com.postrofit.backend.Bean.Small;
 import com.postrofit.backend.Model.DAO.DeliveryDAO;
 import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DAO.UserDAO;
+import com.postrofit.backend.Model.DTO.RequestHistoryDetailDTO;
 import com.postrofit.backend.Model.DTO.RequestTakeOrderDTO;
 import com.postrofit.backend.Repository.OrderDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,9 @@ public class GetOrderDAOBean {
 
     public OrderDAO exec(DeliveryDAO deliveryDAO) {
         return orderDAORepository.findById(deliveryDAO.getOrderId()).orElse(null);
+    }
+
+    public OrderDAO exec(RequestHistoryDetailDTO requestHistoryDetailDTO) {
+        return orderDAORepository.findById(requestHistoryDetailDTO.getOrderId()).orElse(null);
     }
 }
