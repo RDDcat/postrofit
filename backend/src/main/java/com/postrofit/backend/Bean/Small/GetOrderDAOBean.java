@@ -16,10 +16,12 @@ public class GetOrderDAOBean {
     @Autowired
     OrderDAORepository orderDAORepository;
 
+    //TODO 시작역, 도착역, 유저아이디 가지고 OrderDAO (주문표?) 가져오기
     public OrderDAO exec(String start, String end, String userId) {
         return null;
     }
 
+    //TODO UserDAO 가지고 OrderDAO 가져오기 (의뢰한 유저가 필요)
     public OrderDAO exec(UserDAO userDAO){
         Optional<OrderDAO> orderDAO = orderDAORepository.findTop1OrderDAOByUserId(userDAO.getUserId());
 
@@ -31,6 +33,7 @@ public class GetOrderDAOBean {
         return orderDAORepository.findById(requestTakeOrderDTO.getOrderId()).orElse(null);
     }
 
+    // TODO DeliveryDAO 가지고 OrderDAO 가져오기 (배달원이 필요)
     public OrderDAO exec(DeliveryDAO deliveryDAO) {
         return orderDAORepository.findById(deliveryDAO.getOrderId()).orElse(null);
     }
