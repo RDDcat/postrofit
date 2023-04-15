@@ -11,11 +11,11 @@ public class GetDeliveryDAOBean {
     @Autowired
     DeliveryDAORepository deliveryDAORepository;
 
+    // TODO 유저 ID를 가지고 Delivery DAO를 가져옴
     public DeliveryDAO exec(long userId) {
         // null 예외처리 해줘야함
         return deliveryDAORepository.findDeliveryDAOByUserId(userId);
     }
-
     public DeliveryDAO exec(RequestHistoryDetailDTO requestHistoryDetailDTO) {
         return deliveryDAORepository.findById(requestHistoryDetailDTO.getDeliveryId()).orElse(null);
     }
