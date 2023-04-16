@@ -28,7 +28,7 @@ public class GetEmptyStorageCount {
         List<StorageDAO> storageDAOS = getStorageDAOsBean.exec(stationDAO);
 
         EmptyStorageCountDTO emptyStorageCountDTO = getEmptyStorageCountDTO.exec(storageDAOS);
-        getStoreProfitBean.exec();
+        
         return emptyStorageCountDTO;
     }
 }
