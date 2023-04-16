@@ -1,5 +1,6 @@
 package com.postrofit.backend.Bean;
 
+import com.postrofit.backend.Bean.Small.GetEmptyStorageCountDTO;
 import com.postrofit.backend.Bean.Small.GetStationDAOBean;
 import com.postrofit.backend.Bean.Small.GetStorageDAOsBean;
 import com.postrofit.backend.Model.DAO.StationDAO;
@@ -16,13 +17,14 @@ public class GetEmptyStorageCount {
     GetStationDAOBean getStationDAOBean;
     @Autowired
     GetStorageDAOsBean getStorageDAOsBean;
+    @Autowired
+    GetEmptyStorageCountDTO getEmptyStorageCountDTO;
 
     public EmptyStorageCountDTO exec(String stationName) {
         StationDAO stationDAO = getStationDAOBean.exec(stationName);
         List<StorageDAO> storageDAOS = getStorageDAOsBean.exec(stationDAO);
 
-
-        EmptyStorageCountDTO emptyStorageCountDTO = new EmptyStorageCountDTO();
+        EmptyStorageCountDTO emptyStorageCountDTO = getEmptyStorageCountDTO.exec(storageDAOS);
 
         return emptyStorageCountDTO;
     }

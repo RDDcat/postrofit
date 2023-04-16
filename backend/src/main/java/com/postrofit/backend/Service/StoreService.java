@@ -36,6 +36,6 @@ public class StoreService {
     }
 
     public EmptyStorageCountDTO getEmptyCount(String stationName){
-        EmptyStorageCountDTO emptyStorageCountDTO = getEmptyStorageCount.exec(stationName);
+        return getEmptyStorageCount.exec(stationName);
     }
 }
