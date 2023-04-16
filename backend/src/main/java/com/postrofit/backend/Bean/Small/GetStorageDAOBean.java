@@ -1,10 +1,8 @@
 package com.postrofit.backend.Bean.Small;
 
-import com.postrofit.backend.Model.DAO.DeliveryDAO;
-import com.postrofit.backend.Model.DAO.OrderDAO;
-import com.postrofit.backend.Model.DAO.StorageDAO;
-import com.postrofit.backend.Model.DAO.StoreDAO;
+import com.postrofit.backend.Model.DAO.*;
 import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
+import com.postrofit.backend.Model.DTO.RequestStartStoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.RequestStoreDTO;
 import com.postrofit.backend.Repository.StorageDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +37,9 @@ public class GetStorageDAOBean {
 
     public StorageDAO exec(RequestStoreDTO requestStoreDTO) {
         return storageRepository.findStorageDAOByStorageId(requestStoreDTO.getStorageId());
+    }
+
+    public StorageDAO exec(StationDAO stationDAO, RequestStartStoragePasswordDTO requestStartStoragePasswordDTO) {
+        return storageRepository.findStorageDAOByStationIdAndStorageNumber(stationDAO.getStationId(), requestStartStoragePasswordDTO.getStorageNum());
     }
 }

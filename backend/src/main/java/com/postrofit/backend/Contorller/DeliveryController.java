@@ -1,9 +1,6 @@
 package com.postrofit.backend.Contorller;
 
-import com.postrofit.backend.Model.DTO.DeliveryCostDTO;
-import com.postrofit.backend.Model.DTO.RequestTakeOrderDTO;
-import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
-import com.postrofit.backend.Model.DTO.StorageStatDTO;
+import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -49,4 +46,11 @@ public class DeliveryController {
         return service.getStorageList(start, end);
     }
 
+    // TODO 배달 출발역 비밀번호 확인 (김태영은 보시오!)
+    // TODO income (출발역) (도착역) (사용자 아이디)
+    // TODO return 보관함 비밀번호
+    @GetMapping("/take/password/{start}/{storageNum}")
+    public StoragePasswordDTO getStartStoragePassword(@ModelAttribute RequestStartStoragePasswordDTO requestStartStoragePasswordDTO){
+        return service.getStartStoragePassword(requestStartStoragePasswordDTO);
+    }
 }
