@@ -11,11 +11,13 @@ import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 public class StoreDTO implements HistoryDTO {
+    long storageId;
     int price;
     StorageSize storageSize;
     Timestamp timestamp;
 
     public StoreDTO (StoreDAO storeDAO, StoreProfitDTO storeProfitDTO){
+        this.storageId = storeDAO.getStorageId();
         this.price = storeProfitDTO.getProfit();
         this.storageSize = storeProfitDTO.getStorageSize();
         this.timestamp = storeDAO.getCreateAt();

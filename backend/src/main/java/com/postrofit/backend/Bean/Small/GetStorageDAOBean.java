@@ -17,10 +17,8 @@ public class GetStorageDAOBean {
     @Autowired
     StorageDAORepository storageRepository;
 
-    public StorageDAO exec(long storeId) {
-
-
-        return null;
+    public StorageDAO exec(long storageId) {
+        return storageRepository.findById(storageId).orElse(null);
     }
 
     public StorageDAO exec(OrderDAO order) {
