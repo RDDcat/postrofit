@@ -4,6 +4,7 @@ import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.EmptyStorageCountDTO;
 import com.postrofit.backend.Model.Enum.StorageSize;
 import com.postrofit.backend.Model.Enum.StorageStat;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

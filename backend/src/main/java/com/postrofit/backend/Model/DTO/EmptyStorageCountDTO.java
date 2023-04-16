@@ -9,8 +9,4 @@ public class EmptyStorageCountDTO {
     int smallCount;
     int midCount;
     int bigCount;
-
-    int smallPrice;
-    int midPrice;
-    int bigPrice;
 }
