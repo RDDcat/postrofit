@@ -1,12 +1,8 @@
 package com.postrofit.backend.Contorller;
 
-import com.postrofit.backend.Model.DTO.RequestStoreDTO;
-import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
-import com.postrofit.backend.Model.DTO.StorageStatDTO;
-import com.postrofit.backend.Model.DTO.StoreProfitDTO;
+import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -49,6 +45,9 @@ public class StoreController {
         storeService.makeStore(requestStoreDTO);
     }
 
-
+    // d
+    @GetMapping("/empty/{stationName}")
+    public EmptyStorageCountDTO getEmptyCount(@PathVariable String stationName){return storeService.getEmptyCount(stationName);
+    }
 
 }

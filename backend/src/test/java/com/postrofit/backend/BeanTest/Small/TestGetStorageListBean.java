@@ -1,6 +1,6 @@
 package com.postrofit.backend.BeanTest.Small;
 
-import com.postrofit.backend.Bean.Small.GetStorageListBean;
+import com.postrofit.backend.Bean.legacy.GetStorageListBean;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

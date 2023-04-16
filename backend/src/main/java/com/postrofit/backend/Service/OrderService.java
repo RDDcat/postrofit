@@ -5,6 +5,7 @@ import com.postrofit.backend.Bean.MakeOrderBean;
 import com.postrofit.backend.Bean.StorageStatBean;
 import com.postrofit.backend.Bean.Order2Bean;
 import com.postrofit.backend.Bean.Order3Bean;
+import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DTO.OrderCostDTO;
 import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
@@ -42,8 +43,8 @@ public class OrderService {
         makeOrderGETBean.exec(userId, stationName, storageNum);
     }
 
-    public void makeOrderPOST(RequestMakeOrderDTO requestMakeOrderDTO) {
-        makeOrderBean.exec(requestMakeOrderDTO);
+    public OrderDAO makeOrderPOST(RequestMakeOrderDTO requestMakeOrderDTO) {
+        return makeOrderBean.exec(requestMakeOrderDTO);
 
     }
 }

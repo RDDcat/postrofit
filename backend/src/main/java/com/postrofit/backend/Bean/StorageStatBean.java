@@ -1,7 +1,7 @@
 package com.postrofit.backend.Bean;
 
 import com.postrofit.backend.Bean.Small.GetStationDAOBean;
-import com.postrofit.backend.Bean.Small.GetStorageListBean;
+import com.postrofit.backend.Bean.Small.GetStorageDAOsBean;
 import com.postrofit.backend.Bean.Small.GetStorageStatDTOsBean;
 import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
@@ -17,7 +17,7 @@ public class StorageStatBean {
     @Autowired
     GetStationDAOBean getStationDAOBean;
     @Autowired
-    GetStorageListBean getStorageListBean;
+    GetStorageDAOsBean getStorageDAOsBean;
     @Autowired
     GetStorageStatDTOsBean getStorageStatDTOsBean;
 
@@ -27,7 +27,7 @@ public class StorageStatBean {
         StationDAO stationDAO = getStationDAOBean.exec(start);
 
         // TODO 역 id로 보관함 전체가져오기
-        List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationDAO);
+        List<StorageDAO> StorageDAOS = getStorageDAOsBean.exec(stationDAO);
 
         // TODO 보관함 전체를 상태값만 가진 DTO로 변경
         List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);

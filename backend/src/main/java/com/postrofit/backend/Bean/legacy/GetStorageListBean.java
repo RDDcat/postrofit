@@ -1,4 +1,4 @@
-package com.postrofit.backend.Bean.Small;
+package com.postrofit.backend.Bean.legacy;
 
 import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;

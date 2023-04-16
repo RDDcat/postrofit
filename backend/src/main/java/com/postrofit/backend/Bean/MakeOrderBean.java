@@ -23,7 +23,7 @@ public class MakeOrderBean {
     GetStationDAOBean getStationDAOBean;
     @Autowired
     SaveOrderBean saveOrderBean;
-    public void exec(RequestMakeOrderDTO requestMakeOrderDTO){
+    public OrderDAO exec(RequestMakeOrderDTO requestMakeOrderDTO){
         UserDAO userDAO = getUserDAOBean.exec(requestMakeOrderDTO);
         StorageDAO storageDAO = getStorageDAOBean.exec(requestMakeOrderDTO);
         // 도착역 DAO
@@ -34,5 +34,6 @@ public class MakeOrderBean {
         storageDAO.updateStat(StorageStat.WAIT); // 아마 더티체킹으로 저장되지 않을까?
 
         saveOrderBean.exec(orderDAO);
+        return orderDAO;
     }
 }

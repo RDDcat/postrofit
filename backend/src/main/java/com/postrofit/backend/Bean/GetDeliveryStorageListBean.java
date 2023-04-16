@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean;
 
 import com.postrofit.backend.Bean.Small.*;
+import com.postrofit.backend.Bean.legacy.GetStorageListBean;
 import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
@@ -17,7 +18,7 @@ public class GetDeliveryStorageListBean {
     @Autowired
     GetStationDAOBean getStationDAOBean;
     @Autowired
-    GetStorageListBean getStorageListBean;
+    GetStorageDAOsBean getStorageDAOsBean;
     @Autowired
     GetStorageStatDTOsBean getStorageStatDTOsBean;
     @Autowired
@@ -38,7 +39,7 @@ public class GetDeliveryStorageListBean {
 
         // 그 역의 보관함 전체 리스트 가져오기 (사이즈랑 번호 필요)
         StationDAO stationDAO = getStationDAOBean.exec(start);
-        List<StorageDAO> StorageDAOS = getStorageListBean.exec(stationDAO);
+        List<StorageDAO> StorageDAOS = getStorageDAOsBean.exec(stationDAO);
         List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);
 
 
