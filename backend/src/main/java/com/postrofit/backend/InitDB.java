@@ -283,13 +283,13 @@ public class InitDB {
             OrderDAO order3 = new OrderDAO();
             order3.makeOrder(user2, storage4, station2);
             OrderDAO order4 = new OrderDAO();
-            order3.makeOrder(user3, storage5, station3);
+            order4.makeOrder(user3, storage5, station3);
             OrderDAO order5 = new OrderDAO();
-            order3.makeOrder(user4, storage6, station2);
+            order5.makeOrder(user4, storage6, station2);
             OrderDAO order6 = new OrderDAO();
-            order3.makeOrder(user2, storage48, station0);
+            order6.makeOrder(user2, storage48, station0);
             OrderDAO order7 = new OrderDAO();
-            order3.makeOrder(user2, storage47, station1);
+            order7.makeOrder(user2, storage47, station1);
 
             orderDAORepository.save(order1);
             orderDAORepository.save(order2);
@@ -302,7 +302,7 @@ public class InitDB {
             DeliveryDAO delivery1 = new DeliveryDAO();
             delivery1.makeDelivery(order2, 3);
             DeliveryDAO delivery2 = new DeliveryDAO();
-            delivery1.makeDelivery(order4, 1);
+            delivery2.makeDelivery(order4, 1);
 
             deliveryDAORepository.save(delivery1);
             deliveryDAORepository.save(delivery2);
