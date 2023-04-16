@@ -53,4 +53,10 @@ public class DeliveryController {
     public StoragePasswordDTO getStartStoragePassword(@ModelAttribute RequestStartStoragePasswordDTO requestStartStoragePasswordDTO){
         return service.getStartStoragePassword(requestStartStoragePasswordDTO);
     }
+
+    // 옮길게요 배달가능한 갯수 구하기
+    @GetMapping("/count/orders/{start}/{end}")
+    public DeliveryCountDTO getDeliveryCountDTO(@ModelAttribute RequestStartEndDTO requestStartEndDTO){
+        return service.getDeliveryCountDTO(requestStartEndDTO);
+    }
 }

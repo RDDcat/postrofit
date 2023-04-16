@@ -10,4 +10,5 @@ public interface OrderDAORepository extends JpaRepository<OrderDAO, Long> {
     Optional<OrderDAO> findTop1OrderDAOByUserId(long userId);
     List<OrderDAO> findOrderDAOsByUserId(long userId);
     OrderDAO findFirstByStartStationIdAndEndStationIdOrderByCreateAtDesc(long startStationId, long endStationId);
+    List<OrderDAO> findOrderDAOSByStartStationIdAndEndStationId(long startStationId, long endStationId);
 }
