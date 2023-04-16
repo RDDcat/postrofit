@@ -1,10 +1,7 @@
 package com.postrofit.backend.Contorller;
 
 import com.postrofit.backend.Model.DAO.OrderDAO;
-import com.postrofit.backend.Model.DTO.OrderCostDTO;
-import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
-import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
-import com.postrofit.backend.Model.DTO.StorageStatDTO;
+import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,5 +57,10 @@ public class OrderController {
         return orderService.makeOrderPOST(requestMakeOrderDTO);
     }
 
+    // 메인 - 빈 보관함 갯수
+    @GetMapping("/empty/{stationName}")
+    public EmptyOrderStorageCountDTO getEmptyStorageCount(@PathVariable String stationName){
+        return orderService.getEmptyStorageCount(stationName);
+    }
 
 }

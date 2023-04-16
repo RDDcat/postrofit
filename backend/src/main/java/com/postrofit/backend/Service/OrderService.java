@@ -1,15 +1,8 @@
 package com.postrofit.backend.Service;
 
-import com.postrofit.backend.Bean.MakeOrderGETBean;
-import com.postrofit.backend.Bean.MakeOrderBean;
-import com.postrofit.backend.Bean.StorageStatBean;
-import com.postrofit.backend.Bean.Order2Bean;
-import com.postrofit.backend.Bean.Order3Bean;
+import com.postrofit.backend.Bean.*;
 import com.postrofit.backend.Model.DAO.OrderDAO;
-import com.postrofit.backend.Model.DTO.OrderCostDTO;
-import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
-import com.postrofit.backend.Model.DTO.StoragePasswordDTO;
-import com.postrofit.backend.Model.DTO.StorageStatDTO;
+import com.postrofit.backend.Model.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +20,8 @@ public class OrderService {
     MakeOrderGETBean makeOrderGETBean;
     @Autowired
     MakeOrderBean makeOrderBean;
+    @Autowired
+    GetEmptyOrderStorageCountBean getEmptyOrderStorageCountBean;
 
     public List<StorageStatDTO> order1(String start){
         return storageStatBean.exec(start);
@@ -46,5 +41,9 @@ public class OrderService {
     public OrderDAO makeOrderPOST(RequestMakeOrderDTO requestMakeOrderDTO) {
         return makeOrderBean.exec(requestMakeOrderDTO);
 
+    }
+
+    public EmptyOrderStorageCountDTO getEmptyStorageCount(String stationName) {
+        return getEmptyOrderStorageCountBean.exec(stationName);
     }
 }
