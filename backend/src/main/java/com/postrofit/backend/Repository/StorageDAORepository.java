@@ -14,4 +14,6 @@ public interface StorageDAORepository extends JpaRepository<StorageDAO, Long> {
 
     StorageDAO findStorageDAOByStorageId(long storageId);
 
+    StorageDAO findStorageDAOByStoragePasswordId(long password);
+
 }
