@@ -8,4 +8,6 @@ import java.util.List;
 public interface DeliveryDAORepository extends JpaRepository<DeliveryDAO, Long> {
     DeliveryDAO findDeliveryDAOByUserId(long userId);
     List<DeliveryDAO> findAllByUserId(long userId);
+
+    DeliveryDAO findDeliveryDAOByStorageId(long storageId);
 }

@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StoreDAORepository extends JpaRepository<StoreDAO, Long> {
     StoreDAO findStoreDAOByUserId(long userId);
+
+    StoreDAO findStoreDAOByStorageId(long storageId);
 }
