@@ -15,6 +15,7 @@ public class GetOrderDTOBean {
         StationDAO endStationDAO = getStationDAOBean.exec(orderDAO.getEndStationId());
 
         OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setOrderId(orderDAO.getOrderId());
         orderDTO.setStartStationName(startStationDAO.getStationName());
         orderDTO.setEndStationName(endStationDAO.getStationName());
         if(orderDTO.getPrice() == 0){

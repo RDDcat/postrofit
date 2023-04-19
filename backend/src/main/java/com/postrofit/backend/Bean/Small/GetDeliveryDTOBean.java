@@ -22,7 +22,7 @@ public class GetDeliveryDTOBean {
         StationDAO endStationDAO = getStationDAOBean.exec(orderDAO.getEndStationId());
 
         DeliveryDTO deliveryDTO = new DeliveryDTO();
-
+        deliveryDTO.setDeliveryId(deliveryDAO.getDeliveryId());
         deliveryDTO.setStartStationName(startStationDAO.getStationName());
         deliveryDTO.setEndStationName(endStationDAO.getStationName());
         if(deliveryDAO.getPrice() == 0){

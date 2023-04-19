@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 
 @Data
 public class OrderDTO implements HistoryDTO{
+    long orderId;
     // 출발 역 이름
     String startStationName;
 
