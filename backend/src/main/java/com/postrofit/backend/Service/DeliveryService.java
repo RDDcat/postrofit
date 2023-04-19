@@ -1,8 +1,6 @@
 package com.postrofit.backend.Service;
 
 import com.postrofit.backend.Bean.*;
-import com.postrofit.backend.Bean.Small.GetStoragePasswordBean;
-import com.postrofit.backend.Bean.Small.GetStoragePasswordDAOBean;
 import com.postrofit.backend.Model.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +21,8 @@ public class DeliveryService {
     GetStartStoragePassword getStartStoragePassword;
     @Autowired
     GetDeliveryOrderCount getDeliveryOrderCount;
+    @Autowired
+    GetOrderStorageInfo getOrderStorageInfo;
 
     public DeliveryCostDTO getDeliveryCost(String start, String end) {
         return delivery1Bean.exec(start, end);
@@ -49,5 +49,9 @@ public class DeliveryService {
 
     public DeliveryCountDTO getDeliveryCountDTO(RequestStartEndDTO requestStartEndDTO) {
         return getDeliveryOrderCount.exec(requestStartEndDTO);
+    }
+
+    public ResponseDeliveryOrderStorageDTO getOrderStorageInfo(long storageId) {
+        return getOrderStorageInfo.exec(storageId);
     }
 }

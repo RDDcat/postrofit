@@ -21,6 +21,10 @@ public class GetOrderDAOBean {
         return null;
     }
 
+    public OrderDAO exec(long storageId) {
+        return orderDAORepository.findOrderDAOByStorageId(storageId);
+    }
+
     //TODO UserDAO 가지고 OrderDAO 가져오기 (의뢰한 유저가 필요)
     public OrderDAO exec(UserDAO userDAO){
         Optional<OrderDAO> orderDAO = orderDAORepository.findTop1OrderDAOByUserId(userDAO.getUserId());

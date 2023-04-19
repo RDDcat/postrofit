@@ -23,6 +23,13 @@ public class DeliveryController {
         return service.getDeliveryCost(start, end);
     }
 
+    // TODO new
+    // 배달할 오더 정보 + 출발역 스토리지 정보
+    @GetMapping("/order/storage/{storageId}")
+    public ResponseDeliveryOrderStorageDTO getOrderStorageInfo(@PathVariable long storageId){
+        return service.getOrderStorageInfo(storageId);
+    }
+
     // TODO 배달 등록
     // TODO income (출발역) (도착역) (사용자 아이디)
     // TODO return 보관함 비밀번호
