@@ -21,24 +21,36 @@ public class GetStoreProfitBean {
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
             case UBI:
                 storeProfitDTO.setStorageSize(size);
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
             case HAPPY:
                 storeProfitDTO.setStorageSize(size);
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
         }
         return storeProfitDTO;
@@ -55,24 +67,36 @@ public class GetStoreProfitBean {
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
             case UBI:
                 storeProfitDTO.setStorageSize(size);
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
             case HAPPY:
                 storeProfitDTO.setStorageSize(size);
                 storeProfitDTO.setTime(4);
                 switch (size){
                     case SMALL : storeProfitDTO.setProfit(2000);
+                        break;
                     case MID : storeProfitDTO.setProfit(3000);
+                        break;
                     case BIG : storeProfitDTO.setProfit(5000);
+                        break;
+                    default: break;
                 }
         }
         return storeProfitDTO;
