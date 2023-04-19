@@ -37,7 +37,7 @@ public class GetDeliveryStorageListBean {
         // Wait 상태인거 1개 골라오기
         OrderDAO orderDAO = getWaitingOrderBean.exec(startStationDAO, endStationDAO);
 
-        // 그 역의 보관함 전체 리스트 가져오기 (사이즈랑 번호 필요)
+        // 그 역의(시작역) 보관함 전체 리스트 가져오기 (사이즈랑 번호 필요)
         StationDAO stationDAO = getStationDAOBean.exec(start);
         List<StorageDAO> StorageDAOS = getStorageDAOsBean.exec(stationDAO);
         List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);
