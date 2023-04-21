@@ -45,7 +45,7 @@ public class StoreController {
         storeService.makeStore(requestStoreDTO);
     }
 
-    // d
+    // 메인 - 빈 보관함 갯수
     @GetMapping("/empty/{stationName}")
     public EmptyStorageCountDTO getEmptyCount(@PathVariable String stationName){return storeService.getEmptyCount(stationName);
     }

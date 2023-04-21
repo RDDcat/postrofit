@@ -14,9 +14,8 @@ public class DeliveryController {
     @Autowired
     DeliveryService service;
 
-    // TODO 배달 비용 조회
+    // TODO 택배 사이즈 별 예상 수익 조회
     // (출발역) (도착역)
-    // return 택배 사이즈 별 예상수익
     @GetMapping("/cost/{start}/{end}")
     public DeliveryCostDTO getDeliveryCost(@PathVariable String start, @PathVariable String end){
         return service.getDeliveryCost(start, end);
