@@ -14,6 +14,19 @@ public class DeliveryController {
     @Autowired
     DeliveryService service;
 
+    // 옮길게요 배달가능한 갯수 구하기
+    @GetMapping("/count/orders/{start}/{end}")
+    public DeliveryCountDTO getDeliveryCountDTO(@ModelAttribute RequestStartEndDTO requestStartEndDTO){
+        return service.getDeliveryCountDTO(requestStartEndDTO);
+    }
+
+    // TODO 보관함 정보 List
+    // 옮길게요 시점에서 보관함 정보 줘야함 (옮길 보관함 위치만 표시되어있는 리스트)
+    @GetMapping("/storage/{start}/{end}")
+    public List<StorageStatDTO> getStorageList(@PathVariable String start, @PathVariable String end){
+        return service.getStorageList(start, end);
+    }
+
     // TODO 택배 사이즈 별 예상 수익 조회
     // (출발역) (도착역)
     @GetMapping("/cost/{start}/{end}")
@@ -43,12 +56,7 @@ public class DeliveryController {
         return service.delivery3(userId);
     }
 
-    // TODO 보관함 정보 List
-    // 옮길게요 시점에서 보관함 정보 줘야함 (옮길 보관함 위치만 표시되어있는 리스트)
-    @GetMapping("/storage/{start}/{end}")
-    public List<StorageStatDTO> getStorageList(@PathVariable String start, @PathVariable String end){
-        return service.getStorageList(start, end);
-    }
+
 
     // TODO 배달 출발역 비밀번호 확인
     // 출발역) (도착역) (사용자 아이디)
@@ -58,9 +66,5 @@ public class DeliveryController {
         return service.getStartStoragePassword(requestStartStoragePasswordDTO);
     }
 
-    // 옮길게요 배달가능한 갯수 구하기
-    @GetMapping("/count/orders/{start}/{end}")
-    public DeliveryCountDTO getDeliveryCountDTO(@ModelAttribute RequestStartEndDTO requestStartEndDTO){
-        return service.getDeliveryCountDTO(requestStartEndDTO);
-    }
+
 }
