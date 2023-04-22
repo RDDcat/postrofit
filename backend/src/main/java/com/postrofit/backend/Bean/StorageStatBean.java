@@ -31,7 +31,6 @@ public class StorageStatBean {
 
         // TODO 보관함 전체를 상태값만 가진 DTO로 변경
         List<StorageStatDTO> storageStatDTOS = getStorageStatDTOsBean.exec(StorageDAOS);
-        System.out.println("결과값 storageStatDTOS + " +storageStatDTOS);
 
         // TODO 결과리턴
         return storageStatDTOS;
