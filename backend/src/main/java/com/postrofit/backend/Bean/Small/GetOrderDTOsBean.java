@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.OrderDAO;
+import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DTO.History.OrderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

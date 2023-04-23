@@ -1,6 +1,7 @@
 package com.postrofit.backend.Model.DTO.History;
 
 import com.postrofit.backend.Model.Enum.OrderStat;
+import com.postrofit.backend.Model.Enum.StorageSize;
 import lombok.Data;
 
 import javax.persistence.EnumType;
@@ -15,6 +16,8 @@ public class OrderDTO implements HistoryDTO{
 
     // 도착 역 이름
     String endStationName;
+
+    StorageSize size;
 
     // 맡길때 쓴 금액
     int price;

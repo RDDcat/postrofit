@@ -37,7 +37,7 @@ public class GetUserStoreBean {
         StoreProfitDTO storeProfitDTO = getStoreProfitBean.exec(stationDAO, storageDAO);
 
         // 리턴
-        StoreDTO storeDTO = new StoreDTO(storeDAO, storeProfitDTO);
+        StoreDTO storeDTO = new StoreDTO(stationDAO, storeDAO, storeProfitDTO);
         return storeDTO;
     }
 }

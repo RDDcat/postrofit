@@ -31,6 +31,7 @@ public class SetStorageStatDTOByOrderBean {
 
         for (StorageStatDTO dto:storageStatDTOS) {
             if(storageStatDTO.getStorageId() == dto.getStorageId()){
+                dto.setStorageStat(StorageStat.STORE);
                 continue;
             }
             dto.setStorageStat(StorageStat.EMPTY);
