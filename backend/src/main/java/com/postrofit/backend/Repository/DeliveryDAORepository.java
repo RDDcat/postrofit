@@ -10,4 +10,6 @@ public interface DeliveryDAORepository extends JpaRepository<DeliveryDAO, Long> 
     List<DeliveryDAO> findAllByUserId(long userId);
 
     DeliveryDAO findDeliveryDAOByStorageId(long storageId);
+
+    DeliveryDAO findDeliveryDAOByOrderId(long orderId);
 }

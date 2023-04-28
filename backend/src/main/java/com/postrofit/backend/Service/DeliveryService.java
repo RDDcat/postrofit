@@ -33,9 +33,13 @@ public class DeliveryService {
         return takeOrderBean.exec(requestTakeOrderDTO);
     }
 
-    public StoragePasswordDTO delivery3(String userId) {
-        return delivery3Bean.exec(userId);
+    public StoragePasswordDTO delivery3(String orderId) {
+        return delivery3Bean.exec(orderId);
 
+    }
+
+    public StoragePasswordDTO delivery3(RequestEndStoragePasswordDTO requestEndStoragePasswordDTO) {
+        return delivery3Bean.exec(requestEndStoragePasswordDTO);
     }
 
     public List<StorageStatDTO> getStorageList(String start, String end) {
@@ -54,4 +58,6 @@ public class DeliveryService {
     public ResponseDeliveryOrderStorageDTO getOrderStorageInfo(long storageId) {
         return getOrderStorageInfo.exec(storageId);
     }
+
+
 }

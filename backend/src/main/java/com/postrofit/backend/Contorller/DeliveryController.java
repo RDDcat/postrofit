@@ -51,9 +51,14 @@ public class DeliveryController {
     // TODO 보관함 비밀번호
     // (출발역) (도착역) (사용자 아이디)
     // return 보관함 비밀번호
-    @GetMapping("/password/{start}/{end}/{userId}")
-    public StoragePasswordDTO getEndPassword(@PathVariable String userId){
-        return service.delivery3(userId);
+    @GetMapping("/password")
+    public StoragePasswordDTO getEndStoragePassword(@ModelAttribute RequestEndStoragePasswordDTO requestEndStoragePasswordDTO){
+        return service.delivery3(requestEndStoragePasswordDTO);
+    }
+
+    @GetMapping("/password")
+    public StoragePasswordDTO getEndStoragePassword(@RequestParam String orderId){
+        return service.delivery3(orderId);
     }
 
 
