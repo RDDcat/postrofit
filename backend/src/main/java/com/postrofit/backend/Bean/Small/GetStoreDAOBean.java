@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.StoreDAO;
+import com.postrofit.backend.Model.DAO.UserDAO;
 import com.postrofit.backend.Repository.StorageDAORepository;
 import com.postrofit.backend.Repository.StoreDAORepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,15 @@ public class GetStoreDAOBean {
     StoreDAORepository storeDAORepository;
 
     public StoreDAO exec(String userId) {
-        // ????? ㅋㅋㅋㅋㅋ
         return storeDAORepository.findStoreDAOByUserId(Long.parseLong(userId));
     }
 
-    public StoreDAO exec(long userId) {
-        return storeDAORepository.findStoreDAOByUserId(userId);
+    public StoreDAO exec(long storeId) {
+        return storeDAORepository.findById(storeId).orElse(null);
     }
+
+    public StoreDAO exec(UserDAO userDAO) {
+        return storeDAORepository.findStoreDAOByUserId(userDAO.getUserId());
+    }
+
 }

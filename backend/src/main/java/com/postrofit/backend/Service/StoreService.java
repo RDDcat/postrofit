@@ -1,9 +1,6 @@
 package com.postrofit.backend.Service;
 
-import com.postrofit.backend.Bean.GetEmptyStorageCount;
-import com.postrofit.backend.Bean.StorageStatBean;
-import com.postrofit.backend.Bean.Store2Bean;
-import com.postrofit.backend.Bean.Store3Bean;
+import com.postrofit.backend.Bean.*;
 import com.postrofit.backend.Model.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +16,13 @@ public class StoreService {
     @Autowired
     Store3Bean store3Bean;
     @Autowired
+    MakeStoreBean makeStoreBean;
+
+    @Autowired
+    GetStoreIdsBean getStoreIdsBean;
+    @Autowired
+    GetResponseStoreIdBean getStoreIdBean;
+    @Autowired
     GetEmptyStorageCount getEmptyStorageCount;
 
     public List<StorageStatDTO> store1(String start){return storageStatBean.exec(start);}
@@ -31,11 +35,19 @@ public class StoreService {
         return store3Bean.exec(userId);
     }
 
-    public void makeStore(RequestStoreDTO requestStoreDTO) {
+    public ResponseStorePostDTO makeStore(RequestStoreDTO requestStoreDTO) {
+        return makeStoreBean.exec(requestStoreDTO);
+    }
 
+    public ResponseStoreSampleDTO getStoreId(long storeId) {
+        return getStoreIdBean.exec(storeId);
+    }
+    public ResponseStoreIdsDTO getStoreIds(long userId) {
+        return getStoreIdsBean.exec(userId);
     }
 
     public EmptyStorageCountDTO getEmptyCount(String stationName){
         return getEmptyStorageCount.exec(stationName);
     }
+
 }

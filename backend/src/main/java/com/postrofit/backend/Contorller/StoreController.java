@@ -41,13 +41,25 @@ public class StoreController {
 
     // 보관 주문
     @PostMapping("/")
-    public void makeStore(@RequestBody RequestStoreDTO requestStoreDTO){
-        storeService.makeStore(requestStoreDTO);
+    public ResponseStorePostDTO makeStore(@RequestBody RequestStoreDTO requestStoreDTO){
+        return storeService.makeStore(requestStoreDTO);
+    }
+
+    // 보관 정보 : 정보 잃어버려서 다시보낼때
+    @GetMapping("/id/store")
+    public ResponseStoreSampleDTO storePasswordList(@RequestParam long storeId){
+        return storeService.getStoreId(storeId);
+    }
+    // 사용자아이디로 보관주문 목록
+    @GetMapping("/id/user")
+    public ResponseStoreIdsDTO storePassword(@RequestParam long userId){
+        return storeService.getStoreIds(userId);
     }
 
     // 메인 - 빈 보관함 갯수
     @GetMapping("/empty/{stationName}")
-    public EmptyStorageCountDTO getEmptyCount(@PathVariable String stationName){return storeService.getEmptyCount(stationName);
+    public EmptyStorageCountDTO getEmptyCount(@PathVariable String stationName){
+        return storeService.getEmptyCount(stationName);
     }
 
 }
