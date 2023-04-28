@@ -40,7 +40,7 @@ public class DeliveryController {
         return service.getOrderStorageInfo(storageId);
     }
 
-    // TODO 배달 등록
+    // TODO 배달 등록 (로직이 유효하지 않음)
     // (출발역) (도착역) (사용자 아이디)
     // return 보관함 비밀번호
     @PostMapping("/take")
@@ -48,7 +48,7 @@ public class DeliveryController {
         return service.takeOrder(requestTakeOrderDTO);
     }
 
-    // TODO 보관함 비밀번호
+    // TODO 보관함 비밀번호 (유효함)
     // (출발역) (도착역) (사용자 아이디)
     // return 보관함 비밀번호
     @GetMapping("/password")
@@ -56,7 +56,7 @@ public class DeliveryController {
         return service.delivery3(requestEndStoragePasswordDTO);
     }
 
-    @GetMapping("/password")
+    @GetMapping("/password/orderId")
     public StoragePasswordDTO getEndStoragePassword(@RequestParam String orderId){
         return service.delivery3(orderId);
     }
