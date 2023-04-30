@@ -37,7 +37,4 @@ public class GetStationDAOBean {
         return stationRepository.findByStationName(requestStartStoragePasswordDTO.getStart());
     }
 
-    public StationDAO exec(RequestDeliveryStoragePasswordDTO requestStartStoragePasswordDTO) {
-        return stationRepository.f
-    }
 }
