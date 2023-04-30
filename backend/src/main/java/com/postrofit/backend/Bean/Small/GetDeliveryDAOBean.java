@@ -1,6 +1,7 @@
 package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.DeliveryDAO;
+import com.postrofit.backend.Model.DTO.RequestDeliveryStoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.RequestEndStoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.RequestHistoryDetailDTO;
 import com.postrofit.backend.Repository.DeliveryDAORepository;
@@ -24,5 +25,9 @@ public class GetDeliveryDAOBean {
     }
     public DeliveryDAO exec(RequestHistoryDetailDTO requestHistoryDetailDTO) {
         return deliveryDAORepository.findById(requestHistoryDetailDTO.getDeliveryId()).orElse(null);
+    }
+
+    public DeliveryDAO exec(RequestDeliveryStoragePasswordDTO requestStartStoragePasswordDTO) {
+        return deliveryDAORepository.findById(requestStartStoragePasswordDTO.getDeliveryId()).orElse(null);
     }
 }

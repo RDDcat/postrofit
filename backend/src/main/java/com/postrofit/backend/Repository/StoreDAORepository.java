@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface StoreDAORepository extends JpaRepository<StoreDAO, Long> {
     StoreDAO findStoreDAOByUserId(long userId);
+    StoreDAO findTopByUserId(long userId);
 
     StoreDAO findStoreDAOByStorageId(long storageId);
 

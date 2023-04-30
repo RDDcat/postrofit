@@ -2,6 +2,7 @@ package com.postrofit.backend.Bean.Small;
 
 import com.postrofit.backend.Model.DAO.StationDAO;
 import com.postrofit.backend.Model.DAO.StorageDAO;
+import com.postrofit.backend.Model.DTO.RequestDeliveryStoragePasswordDTO;
 import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.DTO.RequestStartStoragePasswordDTO;
 import com.postrofit.backend.Repository.StationDAORepository;
@@ -34,5 +35,9 @@ public class GetStationDAOBean {
 
     public StationDAO exec(RequestStartStoragePasswordDTO requestStartStoragePasswordDTO) {
         return stationRepository.findByStationName(requestStartStoragePasswordDTO.getStart());
+    }
+
+    public StationDAO exec(RequestDeliveryStoragePasswordDTO requestStartStoragePasswordDTO) {
+        return stationRepository.f
     }
 }

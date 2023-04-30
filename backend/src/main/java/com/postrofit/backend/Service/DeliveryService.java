@@ -24,6 +24,8 @@ public class DeliveryService {
     @Autowired
     GetOrderStorageInfo getOrderStorageInfo;
 
+
+
     public DeliveryCostDTO getDeliveryCost(String start, String end) {
         return delivery1Bean.exec(start, end);
     }
@@ -59,5 +61,7 @@ public class DeliveryService {
         return getOrderStorageInfo.exec(storageId);
     }
 
-
+    public StoragePasswordDTO getStartStoragePassword(RequestDeliveryStoragePasswordDTO requestStartStoragePasswordDTO) {
+        return getStartStoragePassword.exec(requestStartStoragePasswordDTO);
+    }
 }

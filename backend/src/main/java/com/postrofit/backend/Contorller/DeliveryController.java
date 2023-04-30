@@ -36,7 +36,7 @@ public class DeliveryController {
 
     // TODO 배달할 오더 정보 + 출발역 스토리지 정보
     @GetMapping("/order/storage/{storageId}")
-    public ResponseDeliveryOrderStorageDTO getOrderStorageInfo(@PathVariable long storageId){
+    public ResponseDeliveryOrderStorageDTO getStartStorage(@PathVariable long storageId){
         return service.getOrderStorageInfo(storageId);
     }
 
@@ -59,6 +59,11 @@ public class DeliveryController {
     @GetMapping("/password/orderId")
     public StoragePasswordDTO getEndStoragePassword(@RequestParam String orderId){
         return service.delivery3(orderId);
+    }
+
+    @GetMapping("/password/deliveryId")
+    public StoragePasswordDTO getStartStoragePassword(@ModelAttribute RequestDeliveryStoragePasswordDTO requestDeliveryStoragePasswordDTO){
+        return service.getStartStoragePassword(requestDeliveryStoragePasswordDTO);
     }
 
 

@@ -21,7 +21,7 @@ public class GetStoreDAOBean {
     }
 
     public StoreDAO exec(UserDAO userDAO) {
-        return storeDAORepository.findStoreDAOByUserId(userDAO.getUserId());
+        return storeDAORepository.findTopByUserId(userDAO.getUserId());
     }
 
 }
