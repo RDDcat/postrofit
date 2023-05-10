@@ -40,7 +40,15 @@ public class DeliveryDAO {
     }
 
     public void makeDelivery(OrderDAO orderDAO, long userId){
-        this.userId = orderDAO.getUserId();
+        this.userId = userId;
+        this.orderId = orderDAO.getOrderId();
+        this.storageId = orderDAO.getStorageId();
+        this.createAt = new Timestamp(System.currentTimeMillis());
+        orderDAO.addDelivery(this);
+    }
+
+    public void makeDelivery(OrderDAO orderDAO, UserDAO user3) {
+        this.userId = user3.getUserId();
         this.orderId = orderDAO.getOrderId();
         this.storageId = orderDAO.getStorageId();
         this.createAt = new Timestamp(System.currentTimeMillis());
