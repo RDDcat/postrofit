@@ -1,9 +1,12 @@
 package com.postrofit.backend.Contorller;
 
 import com.postrofit.backend.Model.DAO.DeliveryDAO;
+import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,8 +48,15 @@ public class DeliveryController {
     // (출발역) (도착역) (사용자 아이디)
     // return 보관함 비밀번호
     @PostMapping("/take")
-    public DeliveryDAO takeOrder(@RequestBody RequestTakeOrderDTO requestTakeOrderDTO){
-        return service.takeOrder(requestTakeOrderDTO);
+    public ResponseEntity<DeliveryDAO> takeOrder(@RequestBody RequestTakeOrderDTO requestTakeOrderDTO){
+        DeliveryDAO deliveryDAO = service.takeOrder(requestTakeOrderDTO);
+
+        // 유효성 검사 실패시
+        if(deliveryDAO == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body();
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(deliveryDAO);
     }
 
     // TODO 보관함 비밀번호 (유효함)
