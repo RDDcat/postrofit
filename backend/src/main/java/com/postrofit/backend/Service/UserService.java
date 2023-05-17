@@ -28,7 +28,7 @@ public class UserService {
     @Autowired
     GetUserHistoryDetailBean getUserHistoryDetailBean;
 
-    public StoreDTO getUserStoreInfo(long userId){
+    public List<StoreDTO> getUserStoreInfo(long userId){
         return getUserStoreBean.exec(userId);
     }
 

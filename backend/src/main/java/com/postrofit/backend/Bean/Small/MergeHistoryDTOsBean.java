@@ -11,6 +11,17 @@ import java.util.List;
 @Component
 public class MergeHistoryDTOsBean {
     public List<HistoryDTO> exec(List<OrderDTO> orderDTOS, List<DeliveryDTO> deliveryDTOS) {
+        if(orderDTOS.isEmpty()){
+            List<HistoryDTO> historyDTOS = new ArrayList<>();
+            historyDTOS.addAll(deliveryDTOS);
+            return historyDTOS;
+        }
+        if(deliveryDTOS.isEmpty()){
+            List<HistoryDTO> historyDTOS = new ArrayList<>();
+            historyDTOS.addAll(orderDTOS);
+            return historyDTOS;
+        }
+
         // order랑 delivery 시간 순서로 정렬해서 하나의 리스트에 넣어서 리턴
         int orderIndex = 0;
         int deliveryIndex = 0;

@@ -20,7 +20,7 @@ public class UserController {
 
     // 유저가 이용중인 보관하기 정보
     @GetMapping("/store/{userId}")
-    public StoreDTO getUserStoreInfo(@PathVariable long userId){
+    public List<StoreDTO> getUserStoreInfo(@PathVariable long userId){
         return userService.getUserStoreInfo(userId);
     }
 
