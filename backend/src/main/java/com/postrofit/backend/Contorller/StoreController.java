@@ -1,8 +1,11 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,8 +44,15 @@ public class StoreController {
 
     // 보관 주문
     @PostMapping("/")
-    public ResponseStorePostDTO makeStore(@RequestBody RequestStoreDTO requestStoreDTO){
-        return storeService.makeStore(requestStoreDTO);
+    public ResponseEntity<ResponseStorePostDTO> makeStore(@RequestBody RequestStoreDTO requestStoreDTO){
+        ResponseStorePostDTO responseStorePostDTO = storeService.makeStore(requestStoreDTO);
+
+        // 유효성 검사 실패시
+        if(responseStorePostDTO == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseStorePostDTO);
     }
 
     // 보관 정보 : 정보 잃어버려서 다시보낼때

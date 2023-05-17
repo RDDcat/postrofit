@@ -27,6 +27,10 @@ public class MakeStoreBean {
         UserDAO userDAO = getUserDAOBean.exec(requestStoreDTO);
         StorageDAO storageDAO = getStorageDAOBean.exec(requestStoreDTO);
 
+        if(storageDAO.getStorageStat() != StorageStat.EMPTY){
+            // 유효성 검사
+            return null;
+        }
 
         StoreDAO storeDAO = new StoreDAO();
         storeDAO.makeStore(userDAO, storageDAO);
