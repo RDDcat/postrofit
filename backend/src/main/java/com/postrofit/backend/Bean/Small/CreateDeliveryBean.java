@@ -11,11 +11,11 @@ public class CreateDeliveryBean {
     @Autowired
     DeliveryDAORepository deliveryRepository;
 
-    public void exec(OrderDAO orderDAO, long userId){
+    public DeliveryDAO exec(OrderDAO orderDAO, long userId){
         DeliveryDAO deliveryDAO = new DeliveryDAO();
         deliveryDAO.makeDelivery(orderDAO, userId);
 
         // TODO 잘 저장됐는지 확인하는 코드 추가해야함
-        deliveryRepository.save(deliveryDAO);
+        return deliveryRepository.save(deliveryDAO);
     }
 }

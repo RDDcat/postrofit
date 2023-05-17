@@ -1,6 +1,7 @@
 package com.postrofit.backend.Service;
 
 import com.postrofit.backend.Bean.*;
+import com.postrofit.backend.Model.DAO.DeliveryDAO;
 import com.postrofit.backend.Model.DTO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class DeliveryService {
     }
 
     // 배달 주문 받고 보관함 비밀번호 리턴
-    public StoragePasswordDTO takeOrder(RequestTakeOrderDTO requestTakeOrderDTO) {
+    public DeliveryDAO takeOrder(RequestTakeOrderDTO requestTakeOrderDTO) {
         return takeOrderBean.exec(requestTakeOrderDTO);
     }
 

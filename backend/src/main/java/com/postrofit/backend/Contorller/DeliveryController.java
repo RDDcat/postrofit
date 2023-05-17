@@ -1,5 +1,6 @@
 package com.postrofit.backend.Contorller;
 
+import com.postrofit.backend.Model.DAO.DeliveryDAO;
 import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class DeliveryController {
     // (출발역) (도착역) (사용자 아이디)
     // return 보관함 비밀번호
     @PostMapping("/take")
-    public StoragePasswordDTO takeOrder(@RequestBody RequestTakeOrderDTO requestTakeOrderDTO){
+    public DeliveryDAO takeOrder(@RequestBody RequestTakeOrderDTO requestTakeOrderDTO){
         return service.takeOrder(requestTakeOrderDTO);
     }
 
