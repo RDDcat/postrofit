@@ -48,7 +48,7 @@ public class TestGetStorageDAOBean {
     @DisplayName("testGetStorageDAOBean_1 테스트 : OrderDAO order")
     void testGetStorageDAOBean_1(){
         // TODO 실제 있는 데이터 가져와야 함
-        OrderDAO orderDAO = orderDAORepository.findOrderDAOBystorageId(0L);
+        OrderDAO orderDAO = orderDAORepository.findOrderDAOByStorageId(0L);
 
         StorageDAO storageDAO = getStorageDAOBean.exec(orderDAO);
 
