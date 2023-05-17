@@ -5,9 +5,11 @@ import com.postrofit.backend.Model.DAO.StorageDAO;
 import com.postrofit.backend.Model.DAO.UserDAO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class RequestMakeOrderDTO {
     long userId;
     long storageId;

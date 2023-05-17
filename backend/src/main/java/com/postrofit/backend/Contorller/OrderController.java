@@ -4,6 +4,8 @@ import com.postrofit.backend.Model.DAO.OrderDAO;
 import com.postrofit.backend.Model.DTO.*;
 import com.postrofit.backend.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,8 +57,15 @@ public class OrderController {
 
     // TODO 주문 4
     @PostMapping("/make")
-    public OrderDAO makeOrderPOST(@RequestBody RequestMakeOrderDTO requestMakeOrderDTO){
-        return orderService.makeOrderPOST(requestMakeOrderDTO);
+    public ResponseEntity<OrderDAO>  makeOrderPOST(@RequestBody RequestMakeOrderDTO requestMakeOrderDTO){
+        OrderDAO orderDAO = orderService.makeOrderPOST(requestMakeOrderDTO);
+
+        // 유효성 검사 실패시
+        if(orderDAO == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(orderDAO);
+        }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(orderDAO);
     }
 
     // 메인 - 빈 보관함 갯수

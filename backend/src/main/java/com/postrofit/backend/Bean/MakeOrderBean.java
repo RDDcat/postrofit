@@ -32,6 +32,11 @@ public class MakeOrderBean {
         // 도착역 DAO
         StationDAO stationDAO = getStationDAOBean.exec(requestMakeOrderDTO);
 
+        // 요청 유효 검사
+        if(storageDAO.getStorageStat() != StorageStat.EMPTY){
+            return null;
+        }
+
         OrderDAO orderDAO = new OrderDAO();
         orderDAO.makeOrder(userDAO, storageDAO, stationDAO);
         storageDAO.updateStat(StorageStat.WAIT); // 아마 더티체킹으로 저장되지 않을까?
