@@ -11,6 +11,7 @@ import com.postrofit.backend.Model.DTO.ResponseStorePostDTO;
 import com.postrofit.backend.Model.Enum.StorageStat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class MakeStoreBean {
@@ -20,6 +21,8 @@ public class MakeStoreBean {
     GetStorageDAOBean getStorageDAOBean;
     @Autowired
     SaveStoreBean saveStoreBean;
+
+    @Transactional
     public ResponseStorePostDTO exec(RequestStoreDTO requestStoreDTO){
         UserDAO userDAO = getUserDAOBean.exec(requestStoreDTO);
         StorageDAO storageDAO = getStorageDAOBean.exec(requestStoreDTO);

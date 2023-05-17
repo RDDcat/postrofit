@@ -12,6 +12,7 @@ import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
 import com.postrofit.backend.Model.Enum.StorageStat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class MakeOrderBean {
@@ -23,6 +24,8 @@ public class MakeOrderBean {
     GetStationDAOBean getStationDAOBean;
     @Autowired
     SaveOrderBean saveOrderBean;
+
+    @Transactional
     public OrderDAO exec(RequestMakeOrderDTO requestMakeOrderDTO){
         UserDAO userDAO = getUserDAOBean.exec(requestMakeOrderDTO);
         StorageDAO storageDAO = getStorageDAOBean.exec(requestMakeOrderDTO);

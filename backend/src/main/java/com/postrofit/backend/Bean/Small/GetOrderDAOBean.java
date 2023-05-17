@@ -34,6 +34,7 @@ public class GetOrderDAOBean {
     }
 
     public OrderDAO exec(RequestTakeOrderDTO requestTakeOrderDTO) {
+        // RequestTakeOrderDTO 에서만 사용할것
         return orderDAORepository.findById(requestTakeOrderDTO.getOrderId()).orElse(null);
     }
 

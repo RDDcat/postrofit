@@ -14,6 +14,10 @@ public class SetStorageStatDTOByOrderBean {
     public List<StorageStatDTO> exec(List<StorageStatDTO> storageStatDTOS, OrderDAO orderDAO){
         boolean isDataExist = false;
 
+        if(orderDAO == null){
+            return storageStatDTOS;
+        }
+
         for (StorageStatDTO dto:storageStatDTOS) {
             if(orderDAO.getStorageId() == dto.getStorageId()){
                 dto.setStorageStat(StorageStat.WAIT);

@@ -1,6 +1,12 @@
 package com.postrofit.backend;
 
+import com.postrofit.backend.Bean.MakeOrderBean;
+import com.postrofit.backend.Bean.MakeStoreBean;
+import com.postrofit.backend.Bean.TakeOrderBean;
 import com.postrofit.backend.Model.DAO.*;
+import com.postrofit.backend.Model.DTO.RequestMakeOrderDTO;
+import com.postrofit.backend.Model.DTO.RequestStoreDTO;
+import com.postrofit.backend.Model.DTO.RequestTakeOrderDTO;
 import com.postrofit.backend.Model.Enum.OrderStat;
 import com.postrofit.backend.Model.Enum.StorageBrand;
 import com.postrofit.backend.Model.Enum.StorageSize;
@@ -38,6 +44,9 @@ public class InitDB {
         private final OrderDAORepository orderDAORepository;
         private final DeliveryDAORepository deliveryDAORepository;
         private final StoreDAORepository storeDAORepository;
+        private final MakeOrderBean makeOrderBean;
+        private final TakeOrderBean takeOrderBean;
+        private final MakeStoreBean makeStoreBean;
 
 
         public void dbInit() {
@@ -392,56 +401,26 @@ public class InitDB {
             storageDAORepository.save(storage79);
             storageDAORepository.save(storage80);
 
-            OrderDAO order1 = new OrderDAO();
-            order1.makeOrder(user1, storage1, station1);
-            OrderDAO order2 = new OrderDAO();
-            order2.makeOrder(user2, storage2, station1);
-            OrderDAO order3 = new OrderDAO();
-            order3.makeOrder(user2, storage3, station2);
-            OrderDAO order4 = new OrderDAO();
-            order4.makeOrder(user2, storage4, station3);
-            OrderDAO order5 = new OrderDAO();
-            order5.makeOrder(user4, storage5, station2);
-            OrderDAO order6 = new OrderDAO();
-            order6.makeOrder(user4, storage42, station0);
-            OrderDAO order7 = new OrderDAO();
-            order7.makeOrder(user5, storage43, station2);
+            OrderDAO order1 = makeOrderBean.exec(new RequestMakeOrderDTO(user1, storage1, station1));
+            OrderDAO order2 = makeOrderBean.exec(new RequestMakeOrderDTO(user2, storage2, station1));
+            OrderDAO order3 = makeOrderBean.exec(new RequestMakeOrderDTO(user2, storage3, station2));
+            OrderDAO order4 = makeOrderBean.exec(new RequestMakeOrderDTO(user2, storage4, station3));
+            OrderDAO order5 = makeOrderBean.exec(new RequestMakeOrderDTO(user4, storage5, station2));
+            OrderDAO order6 = makeOrderBean.exec(new RequestMakeOrderDTO(user4, storage42, station0));
+            OrderDAO order7 = makeOrderBean.exec(new RequestMakeOrderDTO(user5, storage43, station2));
 
-            orderDAORepository.save(order1);
-            orderDAORepository.save(order2);
-            orderDAORepository.save(order3);
-            orderDAORepository.save(order4);
-            orderDAORepository.save(order5);
-            orderDAORepository.save(order6);
-            orderDAORepository.save(order7);
+            takeOrderBean.exec(new RequestTakeOrderDTO(order1, user3));
+            takeOrderBean.exec(new RequestTakeOrderDTO(order1, user3));
+            takeOrderBean.exec(new RequestTakeOrderDTO(order4, user3));
+            takeOrderBean.exec(new RequestTakeOrderDTO(order3, user1));
 
-            DeliveryDAO delivery1 = new DeliveryDAO();
-            delivery1.makeDelivery(order1, user3);
-            DeliveryDAO delivery2 = new DeliveryDAO();
-            delivery2.makeDelivery(order4, user3);
-            DeliveryDAO delivery3 = new DeliveryDAO();
-            delivery3.makeDelivery(order3, user1);
 
-            deliveryDAORepository.save(delivery1);
-            deliveryDAORepository.save(delivery2);
-            deliveryDAORepository.save(delivery3);
-
-            StoreDAO store1 = new StoreDAO();
-            store1.makeStore(user1, storage10);
-            StoreDAO store2 = new StoreDAO();
-            store2.makeStore(user2, storage11);
-            StoreDAO store3 = new StoreDAO();
-            store3.makeStore(user2, storage12);
-            StoreDAO store4 = new StoreDAO();
-            store4.makeStore(user2, storage31);
-            StoreDAO store5 = new StoreDAO();
-            store5.makeStore(user4, storage33);
-
-            storeDAORepository.save(store1);
-            storeDAORepository.save(store2);
-            storeDAORepository.save(store3);
-            storeDAORepository.save(store4);
-            storeDAORepository.save(store5);
+            makeStoreBean.exec(new RequestStoreDTO(user1, storage10));
+            makeStoreBean.exec(new RequestStoreDTO(user1, storage10));
+            makeStoreBean.exec(new RequestStoreDTO(user2, storage11));
+            makeStoreBean.exec(new RequestStoreDTO(user2, storage12));
+            makeStoreBean.exec(new RequestStoreDTO(user2, storage31));
+            makeStoreBean.exec(new RequestStoreDTO(user4, storage33));
 
         }
     }
