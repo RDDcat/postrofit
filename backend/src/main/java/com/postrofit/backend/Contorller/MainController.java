@@ -20,11 +20,11 @@ public class MainController {
     // welcome 페이지
     @GetMapping("/")
     public String welcome(){
-        return "welcome s";
+        return "welcome backend-service is on";
     }
     @GetMapping("/health")
     public String health(){
-        return String.format("indexsdfasdf %s", environment.getProperty("local.server.port"));
+        return String.format("health check : port is %s", environment.getProperty("local.server.port"));
     }
 
 
