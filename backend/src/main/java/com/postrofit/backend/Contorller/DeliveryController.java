@@ -53,7 +53,7 @@ public class DeliveryController {
 
         // 유효성 검사 실패시
         if(deliveryDAO == null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(deliveryDAO);
