@@ -410,13 +410,13 @@ public class InitDB {
             OrderDAO order7 = makeOrderBean.exec(new RequestMakeOrderDTO(user5, storage43, station2));
 
             takeOrderBean.exec(new RequestTakeOrderDTO(order1, user3));
-            takeOrderBean.exec(new RequestTakeOrderDTO(order1, user3));
-            takeOrderBean.exec(new RequestTakeOrderDTO(order4, user3));
+            takeOrderBean.exec(new RequestTakeOrderDTO(order2, user3));
             takeOrderBean.exec(new RequestTakeOrderDTO(order3, user1));
+            takeOrderBean.exec(new RequestTakeOrderDTO(order4, user3));
 
 
             makeStoreBean.exec(new RequestStoreDTO(user1, storage10));
-            makeStoreBean.exec(new RequestStoreDTO(user1, storage10));
+            makeStoreBean.exec(new RequestStoreDTO(user1, storage13));
             makeStoreBean.exec(new RequestStoreDTO(user2, storage11));
             makeStoreBean.exec(new RequestStoreDTO(user2, storage12));
             makeStoreBean.exec(new RequestStoreDTO(user2, storage31));
