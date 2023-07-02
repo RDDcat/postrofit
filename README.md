@@ -3,6 +3,7 @@
 <div align="center">
   <img src="https://github.com/RDDcat/postrofit/assets/55569476/f5ed9d98-8d78-4a48-b78e-db531e4a6078"/>
 </div>
+<br><br>
 
 "지하철 보관함을 어떻게하면 잘 쓸수있을까?" 라는 물음으로 시작한 프로젝트 입니다.
 
