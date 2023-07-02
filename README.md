@@ -25,7 +25,7 @@
 <br>
 
 ## 💻 서비스 화면 구성
-#### 페이지의 자세한 설명은 프론트엔드 readme 파일 참조
+#### 페이지의 자세한 설명은 <a href="https://github.com/nulzi/POSTROFIT">프론트엔드 readme </a> 파일 참조
 |  |  |  |  |
 | --- | --- | --- | --- |
 | ![loading](https://github.com/RDDcat/postrofit/assets/55569476/a7d61fa0-2a08-4db2-b059-3f7b5008a4f0) | ![main](https://github.com/RDDcat/postrofit/assets/55569476/ec90007f-7b49-43f0-9a10-aeb7997a1de6) | ![main1](https://github.com/RDDcat/postrofit/assets/55569476/bc96eb0e-054e-4d59-a419-a884d55ab4d8) | ![main2](https://github.com/RDDcat/postrofit/assets/55569476/57988bdf-4f0b-4588-8913-1025b6014479) |
